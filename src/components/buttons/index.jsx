@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { boxShadowColor, primaryColor, successColor, whitePureColor, whiteSnowColor } from "../colors";
+import { boxShadowColor, whitePureColor, whiteSnowColor } from "../colors";
 import LoadingSpinner from "../LoadingSpinner";
 
 const Button = styled.button`
@@ -14,9 +14,10 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   padding: 0.6em 1.2em;
-  background-color: ${primaryColor};
-  transition: background-color 0.25s;
+  background: linear-gradient(to right, hsla(200, 90%, 50%, 0.8) 0%, hsla(232, 95%, 63%, 0.8) 50%, hsla(242, 95%, 53%, 0.7) 100%);
   outline: none;
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
 
   &:hover {
     filter: brightness(110%);
@@ -24,7 +25,7 @@ const Button = styled.button`
   }
 
   &:active {
-    background-color: #563d7c;
+    transform: translateY(3px);
   }
 
   &:disabled {
@@ -34,7 +35,6 @@ const Button = styled.button`
 
 const Loading = styled(Button)`
   &:disabled {
-    opacity: 0.5;
     cursor: progress;
   }
 `;
@@ -63,7 +63,7 @@ export const DebitsTransactionTypeButton = styled(Button)`
 export const WarningDeleteButton = styled(Button)`
   width: 37px;
   height: 15px;
-  background-color: ${(props) => props.bgColor || "gray"};
+  background: ${(props) => props.bgColor || "gray"};
 `;
 
 export const FilterButton = styled.button`
@@ -79,9 +79,18 @@ export const FilterButton = styled.button`
   background-color: ${(props) => (props.isSelected ? props.bgColor : `${whiteSnowColor}`)};
   gap: 0.8rem;
   margin-bottom: 0.8rem;
-
+  box-shadow: 0px 3px 0px 0px ${boxShadowColor};
+  transition: transform 0.2s ease-in-out;
   ::after {
     content: "${(props) => props.afterContent}";
+  }
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &:active {
+    transform: translateY(2px);
   }
 `;
 export const FiltersActionApplyButton = styled(FilterButton)`

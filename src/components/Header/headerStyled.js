@@ -5,10 +5,12 @@ export const MainHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4% 7%;
+  margin-top: 3%;
   width: 100%;
-  height: 42px;
+  height: 2.5rem;
   color: ${whitePureColor};
+  position: fixed;
+  top: 0;
 `;
 export const DindinHeader = styled.div`
   display: flex;

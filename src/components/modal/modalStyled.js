@@ -61,12 +61,14 @@ export const ModalContentForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  max-height: 700px;
   background-color: ${whitePureColor};
   border-radius: 20px;
   box-shadow: 0 0 10px ${boxShadowColor};
   padding: 3%;
-  height: 100%;
-  max-height: 770px;
+  gap: .5rem;
 `;
 
 export const ModalEditProfileContent = styled(ModalContentForm)``;

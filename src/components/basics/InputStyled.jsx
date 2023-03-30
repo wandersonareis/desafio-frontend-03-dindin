@@ -3,9 +3,11 @@ import styled from "@emotion/styled";
 
 const InputContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 449px;
   position: relative;
+  flex-direction: column;
+  width: 22rem;
+  max-width: 449px;
+  margin-bottom: 2%;
 `;
 
 const InputLabel = styled.label`
@@ -16,17 +18,17 @@ const InputLabel = styled.label`
 `;
 
 const InputElement = styled.input`
-  font-size: 1.3rem;
-  padding: 1.2rem;
+  font-size: 1.2rem;
   border: solid 1px rgb(85, 85, 85);
   border-radius: 5px;
-  height: 4rem;
+  height: 3.5rem;
+  padding: 1rem;
+  margin-bottom: .5rem;
 `;
 
 const Prefix = styled.span`
   position: absolute;
   top: 67%;
-
   left: 1.2rem;
   font-size: 1.2rem;
   transform: translateY(-50%);

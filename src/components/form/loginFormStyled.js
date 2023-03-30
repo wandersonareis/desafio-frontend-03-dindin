@@ -1,23 +1,34 @@
 import styled from "@emotion/styled";
 import { highlightColor, whitePureColor } from "../colors";
-import { Container } from "../styled";
 import { ModalContentForm } from "../modal/modalStyled";
 
-export const LoginContainer = styled(Container)`
-  padding: 4% 7%;
+export const LoginContainer = styled.div`
+  --auto-grid-min-size: 20rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    justify-items: end;
+  }
 `;
 export const LoginFormContainer = styled(ModalContentForm)`
-  justify-content: space-evenly;
-  height: 535px;
+  justify-content: space-between;
+  gap: .5rem;
+  max-height: 30rem;
   padding: 2.5%;
+  @media (min-width: 1024px) {
+    max-width: max-content;
+  }
 `;
 export const LoginLeftContainer = styled.div`
   display: flex;
-  flex: 50%;
   flex-wrap: wrap;
   gap: 20px;
 `;
 export const TittleParagraph = styled.h1`
+  font-size: calc(2.3rem + 0.5vw);
   color: ${whitePureColor};
 
   & > strong {
@@ -26,17 +37,17 @@ export const TittleParagraph = styled.h1`
 `;
 export const Paragraph = styled.p`
   display: flex;
-  width: 614px;
-  height: 124px;
-  font-size: 28px;
+  font-size: calc(1.2rem + 0.5vw);
   text-overflow: ellipsis;
   text-align: left;
-  margin-right: 100px;
-  margin-top: 0;
   color: ${whitePureColor};
 
   & > strong {
     margin-left: 1%;
     color: ${highlightColor};
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 33rem;
   }
 `;

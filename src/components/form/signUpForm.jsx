@@ -92,7 +92,7 @@ const SignUpContainer = styled(Container)`
 `;
 
 const SignUpContent = styled(ModalContentForm)`
-justify-content: space-around;
+  justify-content: space-around;
   align-items: center;
-  height: 770px;
+  max-height: 770px;
 `;

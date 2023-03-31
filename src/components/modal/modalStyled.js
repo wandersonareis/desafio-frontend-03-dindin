@@ -10,7 +10,7 @@ export const ModalBackdrop = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;;
+  align-items: center;
   background-color: ${backDropColor};
   z-index: 2;
 
@@ -66,6 +66,7 @@ export const ModalContentForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   max-height: 700px;
   background-color: ${whitePureColor};
   border-radius: 20px;

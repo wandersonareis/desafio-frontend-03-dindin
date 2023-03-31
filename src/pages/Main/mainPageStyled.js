@@ -27,8 +27,6 @@ export const Card = styled.div`
 `;
 
 export const MainCard = styled.div`
-  display: flex;
-  justify-content: space-between;
   border-radius: 10px;
   --auto-grid-min-size: 20rem;
   display: grid;

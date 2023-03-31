@@ -2,15 +2,18 @@ import styled from "@emotion/styled";
 import { highlightColor, whitePureColor } from "../colors";
 import { ModalContentForm } from "../modal/modalStyled";
 
-export const LoginContainer = styled.div`
+export const LoginContainer = styled.main`
   --auto-grid-min-size: 20rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
   grid-gap: 1rem;
+  height: 100%;
   align-items: center;
+  justify-content: center;
+  margin-top: 4%;
 
   @media (min-width: 1024px) {
-    justify-items: end;
+    justify-content: end;
   }
 `;
 export const LoginFormContainer = styled(ModalContentForm)`

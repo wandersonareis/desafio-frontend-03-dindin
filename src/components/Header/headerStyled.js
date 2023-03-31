@@ -9,10 +9,15 @@ export const MainHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 4%;
+  margin-top: 2%;
   width: 100%;
   max-width: 1440px;
   height: 2.5rem;
   color: ${whitePureColor};
+
+  @media (min-width: 768px) {
+    margin-top: 1%;
+  }
 `;
 
 export const DindinHeader = styled.div`

@@ -18,7 +18,11 @@ Instale as dependências do projeto utilizando o gerenciador de pacotes Npm com 
 
 ```npm install```
 
-Para iniciar o servidor local, utilize o comando yarn start. Isso abrirá o aplicativo em uma nova janela do navegador em 
+Para iniciar o servidor local, utilize o comando
+
+```npm dev```
+
+Isso abrirá o aplicativo em uma nova janela do navegador em 
 
 ```http://localhost:5173```.
 

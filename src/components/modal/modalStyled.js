@@ -12,7 +12,7 @@ export const ModalBackdrop = styled.div`
   justify-content: center;
   align-items: flex-start;;
   background-color: ${backDropColor};
-  z-index: 1;
+  z-index: 2;
 
   @media (min-width: 767px) {
     align-items: center;
@@ -70,7 +70,7 @@ export const ModalContentForm = styled.form`
   background-color: ${whitePureColor};
   border-radius: 20px;
   box-shadow: 0 0 10px ${boxShadowColor};
-  padding: 6%;
+  padding: 2%;
 
   @media (min-width: 767px) {
     justify-content: space-around;

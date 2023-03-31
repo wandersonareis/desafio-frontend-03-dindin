@@ -2,21 +2,15 @@ import styled from "@emotion/styled";
 import { whitePureColor } from "../../components/colors";
 
 export const MainContainer = styled.div`
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
-  //justify-content: center;
-  // width: min(100vw, 1440px);
-  //height: min(100vh - 2.5rem, 1024px - 2.5rem);
+  padding-top: 4rem;
   background: linear-gradient(90deg, rgb(5, 237, 227), rgb(100, 95, 251));
 `;
 export const MainContent = styled.main`
   display: flex;
   flex-direction: column;
   align-items: left;
-  //justify-content: center;
   width: min(100vw, 1440px);
-  height: min(100vh, 1024px - 2.5rem);
+  height: min(100vh, 1024px);
   border-radius: 60px 60px 0px 0px;
   padding: 4% 6%;
   background-color: ${whitePureColor};

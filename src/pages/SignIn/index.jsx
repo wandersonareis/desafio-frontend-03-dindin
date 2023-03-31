@@ -6,9 +6,10 @@ import { Background } from "../../components/styled";
 export default function SignIn() {
   return (
     <Background>
-      
+    <LoginPageContainer>    
         <Header />
         <SignInForm />
+        </LoginPageContainer>  
     </Background>
   );
 }
@@ -18,9 +19,10 @@ const LoginPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100% - 4rem;
+  height: 100%;
 
   @media (min-width: 1024px) {
-    justify-content: center;
+    justify-content: space-around;
+    align-items: space-between;
   }
 `;

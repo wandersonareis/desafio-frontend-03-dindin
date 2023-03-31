@@ -5,9 +5,14 @@ const InputContainer = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 22rem;
+  width: 100%;
   max-width: 449px;
   margin-bottom: 2%;
+  padding: 0 3%;
+
+  @media (min-width: 967px) {
+    width: 22rem;
+  }
 `;
 
 const InputLabel = styled.label`

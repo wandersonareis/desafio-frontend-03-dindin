@@ -2,17 +2,17 @@ import styled from "@emotion/styled";
 import { whitePureColor } from "../colors";
 
 export const MainHeader = styled.header`
+  position: fixed;
+  top: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 3%;
-  padding: 4%;
+  padding: 0 4%;
   width: 100%;
   max-width: 1440px;
   height: 2.5rem;
   color: ${whitePureColor};
-  //position: fixed;
-  top: 0;
 `;
 
 export const DindinHeader = styled.div`

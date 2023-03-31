@@ -2,20 +2,50 @@
 
 # Conclusão do desafio
 
-Desafio concluído no tempo determinado.
-Foi um desafio para ser feito em dupla. Meu parceiro nunca respondeu às tentativas de contato.
-Eu codei o back-end e o front-end como um verdadeiro fullstack.
+Este repositório contém um desafio de desenvolvimento front-end para criar a interface de usuário de um aplicativo de finanças pessoais chamado "DinDin".
+
+A interface deve incluir uma página de login, uma página de registro, uma página principal que exibe informações financeiras, uma página de edição de perfil.
+
+Para executar o projeto localmente, é necessário seguir os seguintes passos:
+
+Clone o repositório em sua máquina local usando o comando 
+
+```git clone https://github.com/wandersonareis/desafio-frontend-03-dindin.git```
+
+Navegue até o diretório do projeto com o comando cd desafio-frontend-03-dindin
+
+Instale as dependências do projeto utilizando o gerenciador de pacotes Npm com o comando
+
+```npm install```
+
+Para iniciar o servidor local, utilize o comando yarn start. Isso abrirá o aplicativo em uma nova janela do navegador em 
+
+```http://localhost:5173```.
+
+Com esses passos, você terá o aplicativo DinDin executando localmente em sua máquina.
+
+---
+
+Consegui concluir o desafio de desenvolvimento front-end em tempo recorde de 7 dias!
+
+Embora o desafio fosse para ser feito em dupla, infelizmente, meu parceiro não deu as caras e eu decidi encarar o desafio como um verdadeiro fullstack. Foi desafiador, mas ao mesmo tempo, me deu uma sensação de satisfação e realização quando vi o resultado final.
+
+Eu assumi a responsabilidade de codificar tanto o back-end quanto o front-end. Para o front-end, utilizei a biblioteca React e a biblioteca @Emotion para a estilização e componentes. Para o back-end, utilizei tecnologias Node.js e Express para a criação da API que fornece os dados financeiros para o aplicativo DinDin.
+
+Foi uma jornada empolgante e um grande aprendizado, e mal posso esperar para enfrentar mais desafios como este no futuro!
 
 Projeto está on-line no link:
-<a href="https://desafio-frontend-03-dindin.vercel.app/" target="_blank">Desafio módulo 03</a>
+<a href="https://desafio-frontend-03-dindin.vercel.app/" target="_blank">Desafio front-end módulo 03</a>
+
+A documentação da API back-end está on-line no link:
+<a href="https://dead-rose-seahorse-suit.cyclic.app/docs/" target="_blank">Documentação Desafio back-end módulo 03</a>
+
 
 # Desafio | Front-end - Módulo 3
 
 Após alguns meses trabalhando em projetos mais simples, você foi designado pelo seu Tech Lead para desenvolver uma aplicação que será apresentada a um cliente muito importante.
 
 Para o seu desenvolvimento foi liberado o layout que você pode encontrar no seguinte [link](https://www.figma.com/file/BwOAJkF8OeMON36TyFdhkj/DinDin-2.0?node-id=0%3A1).
-
-Além disso, você pode acessar o mapa mental com o mapeamento das funcionalidades clicando no seguinte [link](https://miro.com/app/board/uXjVPZkmV7c=/?share_link_id=902157252329).
 
 O sistema trata-se de uma aplicação para controle de finanças pessoais. As funcionalidades são:
 
@@ -31,10 +61,6 @@ O sistema trata-se de uma aplicação para controle de finanças pessoais. As fu
 - Editar perfil de usuário
 - Deslogar usuário
 
-## Detalhamento de Requisitos:
-
-# Pessoa A
-
 ### Cadastro de um novo usuário:
 
 Para cadastrar um novo usuário você terá que preencher o formulário na página de **sign-up**.
@@ -47,20 +73,16 @@ Ao clicar no botão **Cadastrar** você deverá enviar os dados do formulário p
 
 ---
 
-# Pessoa A
-
 ### Login de usuário:
 
 1. Na página de login de usuário, temos um botão chamado **Cadastre-se**, esse botão deve levar o usuário para a tela de cadastrar um novo usuário **(sign-up)**:
-2. O formulário de login deve validar se os campos estão realmente preenchidos, se estiverem preenchidos você enviará uma requisição para a **API** para fazer o login desse usuário, é importante lembrar que existem informações como **token** e **userId** que precisam ser armazenadas no **localStorage** para que o usuário possa depois usar dentro da **área logada**.
+2. O formulário de login deve validar se os campos estão realmente preenchidos, se estiverem preenchidos você enviará uma requisição para a **API** para fazer o login desse usuário.
 3. Caso o login dê certo o usuário deverá ser redirecionado para a tela principal (**main**) onde ele verá a listagem de suas transações.
 4. Caso o usuário esteja logado, nós devemos bloquear o acesso dele a página de login, sendo assim, somente quando o usuário estiver deslogado que poderá acessar a página **sign-in (login)**.
 
 ![](https://i.imgur.com/vvnluj6.png)
 
 ---
-
-# Pessoa B
 
 ### Página principal (main):
 
@@ -259,5 +281,3 @@ Veja na imagem abaixo os ícones:
 ---
 
 **LEMBRE-SE**: é melhor feito do que perfeito, mas não faça mal feito!!!
-
-###### tags: `front-end` `módulo 3` `React` `CSS` `desafio`

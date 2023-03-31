@@ -6,12 +6,15 @@ export const MainHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   margin-top: 3%;
+  padding: 4%;
   width: 100%;
+  max-width: 1440px;
   height: 2.5rem;
   color: ${whitePureColor};
-  position: fixed;
+  //position: fixed;
   top: 0;
 `;
+
 export const DindinHeader = styled.div`
   display: flex;
   align-items: center;
@@ -35,5 +38,11 @@ export const HeaderContainer = styled.div`
   }
 `;
 export const ProfileIcon = styled.img`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
   cursor: pointer;
 `;

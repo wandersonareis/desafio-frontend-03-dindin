@@ -50,13 +50,13 @@ export const AddRegisterButton = styled(Button)`
 
 export const CreditsTransactionTypeButton = styled(Button)`
   border: none;
-  background-color: ${(props) => (props.isSelected ? props.bgColor : "gray")};
+  background: ${(props) => (props.isSelected ? props.bgColor : "gray")};
   border-radius: "10px 0px 0px 10px";
 `;
 
 export const DebitsTransactionTypeButton = styled(Button)`
   border: none;
-  background-color: ${(props) => (props.isSelected ? props.bgColor : "gray")};
+  background: ${(props) => (props.isSelected ? props.bgColor : "gray")};
   border-radius: "0px 10px 10px 0px";
 `;
 
@@ -70,7 +70,7 @@ export const FilterButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 80px;
+  width: fit-content;
   height: 30px;
   box-shadow: 0px 2px 11px ${boxShadowColor};
   border-radius: 10px;
@@ -97,6 +97,7 @@ export const FiltersActionApplyButton = styled(FilterButton)`
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
   color: ${(props) => props.textColor || `black`};
   background-color: ${(props) => props.bgColor || `${whiteSnowColor}`};
   gap: 0;

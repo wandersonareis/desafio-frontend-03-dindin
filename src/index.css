@@ -16,17 +16,17 @@
 }
 
 body {
-  width: 100vw;
-  max-width: 1440px;
-  height: 100vh;
-  max-height: max(100vh, 1024px);
+  width: min(100vw, 1440px);
+  height: min(100vh, 1024px);
   margin: 0 auto;
 }
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }

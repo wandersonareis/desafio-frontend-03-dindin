@@ -2,6 +2,10 @@ import styled from "@emotion/styled";
 import { boxShadowColor, tableBgColor } from "../colors";
 import { Container } from "../styled";
 
+export const TableWrapper = styled.div`
+  overflow-x: auto;
+`;
+
 export const Table = styled.table`
   border-collapse: collapse;
   width: 100%;

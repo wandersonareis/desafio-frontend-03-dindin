@@ -10,9 +10,13 @@ export const ModalBackdrop = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;;
   background-color: ${backDropColor};
   z-index: 1;
+
+  @media (min-width: 767px) {
+    align-items: center;
+  }
 `;
 
 export const ModalBackDropTransactions = styled(ModalBackdrop.withComponent("td"))``;
@@ -21,6 +25,7 @@ export const ModalContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 `;
 
 export const ModalDeleteContainer = styled.td`
@@ -28,13 +33,13 @@ export const ModalDeleteContainer = styled.td`
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  right: -.93rem;
+  right: -0.93rem;
   flex-direction: column;
   text-align: center;
-  font-size: .7rem;
+  font-size: 0.7rem;
   width: 110px;
   height: 45px;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: ${confirmationDialogBgColor};
   border-radius: 4px;
   z-index: 1;
@@ -60,15 +65,18 @@ export const ModalDeleteContent = styled(Container)`
 export const ModalContentForm = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  height: 100%;
   max-height: 700px;
   background-color: ${whitePureColor};
   border-radius: 20px;
   box-shadow: 0 0 10px ${boxShadowColor};
-  padding: 3%;
-  gap: .5rem;
+  padding: 6%;
+
+  @media (min-width: 767px) {
+    justify-content: space-around;
+    height: 100%;
+    gap: 0.5rem;
+  }
 `;
 
 export const ModalEditProfileContent = styled(ModalContentForm)``;

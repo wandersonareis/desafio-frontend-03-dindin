@@ -28,7 +28,7 @@ export default function Header() {
       {isLoggedIn && (
         <HeaderContainer>
           <ProfileIcon onClick={setUserProfileEditModalOpen} src={profileIco} alt="Profile icon" />
-          <p>{user_name}</p>
+          <p onClick={setUserProfileEditModalOpen} >{user_name}</p>
           <Link to="/" onClick={userLogout}>
             <img src={logout} alt="logout" />
           </Link>

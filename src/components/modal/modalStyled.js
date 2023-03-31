@@ -75,6 +75,7 @@ export const ModalContentForm = styled.form`
 
   @media (min-width: 767px) {
     justify-content: space-around;
+    width: auto;
     height: 100%;
     gap: 0.5rem;
   }

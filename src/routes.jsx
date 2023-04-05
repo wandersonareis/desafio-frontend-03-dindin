@@ -1,20 +1,25 @@
-import { Routes, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Main from "./pages/Main";
-import { AuthProvider, ProtectedRoute } from "./context";
+import { ProtectedRoute } from "./context";
+import { createRoutesFromElements } from "react-router-dom";
+import { AuthLayout } from "./context/authLayout";
+import { createHashRouter } from "react-router-dom";
 
-function MainRoutes() {
-  return (
-    <AuthProvider>
-    <Routes>
+export const router = createHashRouter(
+  createRoutesFromElements(
+    <Route element={<AuthLayout />}>
       <Route path="/" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/main" element={<ProtectedRoute><Main /></ProtectedRoute>} />
-    </Routes>
-    </AuthProvider>
-  );
-}
-
-
-export default MainRoutes;
+      <Route
+        path="/main"
+        element={
+          <ProtectedRoute>
+            <Main />
+          </ProtectedRoute>
+        }
+      />
+    </Route>
+  )
+);

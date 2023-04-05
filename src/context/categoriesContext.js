@@ -10,7 +10,7 @@ export function categoriesContext(token) {
         setCategoriesList(response);
       }
     } catch (error) {
-      console.log(error);
+      console.log(error?.response);
     }
   }
 

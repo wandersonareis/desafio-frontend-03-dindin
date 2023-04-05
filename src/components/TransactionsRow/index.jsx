@@ -17,7 +17,7 @@ function TransactionRow({ isOpen, onOpen, transaction }) {
       type: transaction.tipo === "entrada",
       value: formatMoney(transaction.valor.toString()),
       date: onlyDate(transaction.data),
-      categorie_id: transaction.categoria_id,
+      category_id: transaction.categoria_id,
       description: transaction.descricao,
     });
   }, []);

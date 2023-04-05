@@ -9,13 +9,13 @@ import { useOnClickOutside } from "../../lib/customHooks";
 import { useAuth } from "../../context";
 
 export default function TransactionForm({ tittle, onClose, transactionObject, setTransactionObject, handleSubmit }) {
-  const [selectedCategorie, setSelectedCategorie] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState(1);
   const { isLoading, categoriesList } = useAuth();
   const transactionFormRef = useRef()
   useOnClickOutside(transactionFormRef, () => onClose())
 
   useEffect(() => {
-    setSelectedCategorie(transactionObject.categorie_id);
+    setSelectedCategory(transactionObject.category_id);
   }, []);
 
   function handleChangeTransactionType(e) {
@@ -47,7 +47,7 @@ export default function TransactionForm({ tittle, onClose, transactionObject, se
 
   function handleOptionChange(e) {
     const { name, value } = e.target;
-    setSelectedCategorie(value);
+    setSelectedCategory(value);
     setTransactionObject({ ...transactionObject, [name]: value });
   }
 
@@ -66,7 +66,7 @@ export default function TransactionForm({ tittle, onClose, transactionObject, se
         </DebitsTransactionTypeButton>
       </ModalContainer>
       <NumberInputStyled name="value" label="Valor" type="text" value={transactionObject.value} onChange={handleChangeNumberInput} />
-      <SelectStyled name="categorie_id" label="Categoria" type="select" options={categoriesList} value={selectedCategorie} onChange={handleOptionChange} />
+      <SelectStyled name="category_id" label="Categoria" type="select" options={categoriesList} value={selectedCategory} onChange={handleOptionChange} />
       <InputStyled name="date" label="Data" type="date" value={onlyDate(transactionObject.date)} onChange={handleChangeInput} />
       <InputStyled name="description" label="Descrição" type="text" value={transactionObject.description} onChange={handleChangeInput} />
       <LoadingButton type="submit" isLoading={isLoading} text="Confirma" />

@@ -25,8 +25,8 @@ export default function Main() {
     getCategories();
   }, []);
 
-  function selectedFilter(categorie_name) {
-    return filtersList.includes(categorie_name);
+  function selectedFilter(category_name) {
+    return filtersList.includes(category_name);
   }
 
   return (

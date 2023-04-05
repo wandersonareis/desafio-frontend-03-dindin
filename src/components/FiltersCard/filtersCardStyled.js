@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import { boxShadowColor, cardBgColor, categorieCardTittleColor } from "../colors";
+import { boxShadowColor, cardBgColor, categoryCardTittleColor } from "../colors";
 import { Container } from "../styled";
 
 export const CategoriesTittle = styled.span`
   font-size: 0.8rem;
-  color: ${categorieCardTittleColor};
+  color: ${categoryCardTittleColor};
   margin-bottom: .5rem;
 `;
 export const CategoriesFilters = styled.div`

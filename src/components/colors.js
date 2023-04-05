@@ -4,7 +4,7 @@ export const whiteSnowColor = "#f3f3f3";
 export const backDropColor = "rgba(0, 0, 0, 0.5)";
 export const boxShadowColor = "rgba(0, 0, 0, 0.3)";
 
-export const categorieCardTittleColor = "#B9B9B9";
+export const categoryCardTittleColor = "#B9B9B9";
 export const tableBorderColor = "#E0E0E0";
 export const tableCreditsColor = "#7978D9";
 export const tableDebitsColor = "#FA8C10";

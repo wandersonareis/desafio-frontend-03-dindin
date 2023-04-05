@@ -20,7 +20,7 @@ export default function EditTransactionEntryModal({ onClose, transactionToUpdate
         descricao: transactionToUpdate.description,
         valor: formatToCents(transactionToUpdate.value),
         data: toIsodateString(transactionToUpdate.date),
-        categoria_id: transactionToUpdate.categorie_id,
+        categoria_id: transactionToUpdate.category_id,
       };
 
       await sendUserTransactionUpdate(transactionToUpdate.id, transactionData, token);

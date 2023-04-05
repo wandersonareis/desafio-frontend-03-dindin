@@ -9,7 +9,7 @@ import { useAuth } from "../../context";
 const transactionBase = {
   type: false,
   value: formatMoney(""),
-  categorie_id: 1,
+  category_id: 1,
   date: "2023-03-01",
   description: "",
 };
@@ -29,7 +29,7 @@ export default function AddTransactionEntryModal({ isOpen, onClose }) {
         descricao: transaction.description,
         valor: formatToCents(transaction.value),
         data: toIsodateString(transaction.date),
-        categoria_id: transaction.categorie_id,
+        categoria_id: transaction.category_id,
       };
 
       await createUserTransaction(transactionData, token);

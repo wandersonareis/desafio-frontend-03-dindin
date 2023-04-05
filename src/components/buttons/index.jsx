@@ -72,9 +72,8 @@ export const FilterButton = styled.button`
   justify-content: space-between;
   width: fit-content;
   height: 30px;
-  box-shadow: 0px 2px 11px ${boxShadowColor};
   border-radius: 10px;
-  border: none;
+  border: 1px solid #d7d7d7;
   color: ${(props) => (props.isSelected ? `${whitePureColor}` : "black")};
   background-color: ${(props) => (props.isSelected ? props.bgColor : `${whiteSnowColor}`)};
   gap: 0.8rem;
@@ -95,9 +94,7 @@ export const FilterButton = styled.button`
 `;
 export const FiltersActionApplyButton = styled(FilterButton)`
   justify-content: center;
-  align-items: center;
   text-align: center;
-  width: 100%;
   color: ${(props) => props.textColor || `black`};
   background-color: ${(props) => props.bgColor || `${whiteSnowColor}`};
   gap: 0;

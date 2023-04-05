@@ -39,7 +39,7 @@ Eu assumi a responsabilidade de codificar tanto o back-end quanto o front-end. P
 Foi uma jornada empolgante e um grande aprendizado, e mal posso esperar para enfrentar mais desafios como este no futuro!
 
 Projeto está on-line no link:
-<a href="https://desafio-frontend-03-dindin.vercel.app/" target="_blank">Desafio front-end módulo 03</a>
+<a href="https://wandersonareis.github.io/desafio-frontend-03-dindin/" target="_blank">Desafio front-end módulo 03</a>
 
 A documentação da API back-end está on-line no link:
 <a href="https://dead-rose-seahorse-suit.cyclic.app/docs/" target="_blank">Documentação Desafio back-end módulo 03</a>

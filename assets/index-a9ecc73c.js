@@ -486,7 +486,7 @@ attempted value: ${l}
 `,SS=O(Pl)`
   justify-content: flex-start;
   gap: 1rem;
-`;function ES({selectedFilter:e,filtersList:t,setFiltersList:n,setFilters:r}){const{categoriesList:i,getTransactionData:o}=Me();function l(u){t.includes(u)?n(t.filter(c=>c!==u)):n([...t,u])}function s(){o(t),r(t)}function a(){o(),n([]),r([])}return D(xS,{children:[w(vS,{children:"Categoria"}),w(wS,{children:i&&i.map(u=>w(ju,{bgColor:nr,afterContent:e(u.nome)?"x":"+",isSelected:e(u.nome),onClick:()=>l(u.nome),children:w("span",{children:u.nome})},u.id))}),D(SS,{children:[w(wa,{onClick:a,children:"Limpar Filtros"}),w(wa,{textColor:cr,bgColor:nr,onClick:s,children:"Aplicar Filtros"})]})]})}const kS="/desafio-frontend-03-dindin/assets/pencil-085bc638.svg",CS="/desafio-frontend-03-dindin/assets/trash-25641991.svg",_S=O.tr`
+`;function ES({selectedFilter:e,filtersList:t,setFiltersList:n,setFilters:r}){const{categoriesList:i,getTransactionData:o}=Me();function l(u){t.includes(u)?n(t.filter(c=>c!==u)):n([...t,u])}console.log(i);function s(){o(t),r(t)}function a(){o(),n([]),r([])}return D(xS,{children:[w(vS,{children:"Categoria"}),w(wS,{children:i&&i.map(u=>w(ju,{bgColor:nr,afterContent:e(u.nome)?"x":"+",isSelected:e(u.nome),onClick:()=>l(u.nome),children:w("span",{children:u.nome})},u.id))}),D(SS,{children:[w(wa,{onClick:a,children:"Limpar Filtros"}),w(wa,{textColor:cr,bgColor:nr,onClick:s,children:"Aplicar Filtros"})]})]})}const kS="/desafio-frontend-03-dindin/assets/pencil-085bc638.svg",CS="/desafio-frontend-03-dindin/assets/trash-25641991.svg",_S=O.tr`
   position: relative;
 `,Wn=O.td`
   text-align: center;

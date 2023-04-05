@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import { ProtectedRoute } from "./context";
 import { createRoutesFromElements } from "react-router-dom";
 import { AuthLayout } from "./context/authLayout";
+import { categoriesList } from "./services/getCategoriesList";
 import { createHashRouter } from "react-router-dom";
 
 export const router = createHashRouter(
@@ -14,6 +15,7 @@ export const router = createHashRouter(
       <Route path="/signup" element={<SignUp />} />
       <Route
         path="/main"
+        loader={categoriesList}
         element={
           <ProtectedRoute>
             <Main />

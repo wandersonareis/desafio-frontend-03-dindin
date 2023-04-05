@@ -8,21 +8,18 @@ import TransactionsTable from "../../components/TransactionsTable";
 import TransactionsSummary from "../../components/TransactionsSummary";
 import { useAuth } from "../../context";
 import { useToggle } from "../../lib/customHooks";
-import { Fragment } from "react";
-import { Background } from "../../components/styled";
 
 export default function Main() {
   const [filters, setFilters] = useState([]);
   const [filtersList, setFiltersList] = useState([]);
   const [filtersModalOpen, setFiltersModalOpen] = useToggle();
 
-  const { getCategories, getTransactionData, setTransactionsList, setTransactionsSummary } = useAuth();
+  const { getTransactionData, setTransactionsList, setTransactionsSummary } = useAuth();
 
   useEffect(() => {
     setTransactionsList([]);
     setTransactionsSummary({});
     getTransactionData();
-    getCategories();
   }, []);
 
   function selectedFilter(category_name) {

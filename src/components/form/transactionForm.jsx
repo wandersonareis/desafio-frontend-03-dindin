@@ -7,12 +7,15 @@ import { formatMoney } from "../../util/localCurrencyConverter";
 import { onlyDate } from "../../util/localDateFormater";
 import { useOnClickOutside } from "../../lib/customHooks";
 import { useAuth } from "../../context";
+import { useLoaderData } from "react-router-dom";
 
 export default function TransactionForm({ tittle, onClose, transactionObject, setTransactionObject, handleSubmit }) {
   const [selectedCategory, setSelectedCategory] = useState(1);
-  const { isLoading, categoriesList } = useAuth();
-  const transactionFormRef = useRef()
-  useOnClickOutside(transactionFormRef, () => onClose())
+  const { isLoading } = useAuth();
+  const transactionFormRef = useRef();
+  const categoriesList = useLoaderData()
+
+  useOnClickOutside(transactionFormRef, () => onClose());
 
   useEffect(() => {
     setSelectedCategory(transactionObject.category_id);

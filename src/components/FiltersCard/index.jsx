@@ -2,9 +2,12 @@ import { FilterButton, FiltersActionApplyButton } from "../buttons";
 import { primaryColor, whiteSnowColor } from "../colors";
 import { CategoriesFilters, CategoriesTittle, FilterCard, FilterCardActionsContainer } from "./filtersCardStyled";
 import { useAuth } from "../../context";
+import { useLoaderData } from "react-router-dom";
 
 export default function FiltersCard({ selectedFilter, filtersList, setFiltersList, setFilters }) {
-  const { categoriesList, getTransactionData } = useAuth();
+  const { getTransactionData } = useAuth();
+
+  const categoriesList = useLoaderData();
 
   function handleFilterClick(categoryName) {
     if (filtersList.includes(categoryName)) {
@@ -14,12 +17,12 @@ export default function FiltersCard({ selectedFilter, filtersList, setFiltersLis
     }
   }
   function applyFiltersList() {
-    getTransactionData(filtersList)
+    getTransactionData(filtersList);
     setFilters(filtersList);
   }
 
   function cleanFiltersList() {
-    getTransactionData()
+    getTransactionData();
     setFiltersList([]);
     setFilters([]);
   }

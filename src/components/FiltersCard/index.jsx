@@ -5,14 +5,14 @@ import { useAuth } from "../../context";
 
 export default function FiltersCard({ selectedFilter, filtersList, setFiltersList, setFilters }) {
   const { categoriesList, getTransactionData } = useAuth();
-  function handleFilterClick(categorieName) {
-    if (filtersList.includes(categorieName)) {
-      setFiltersList(filtersList.filter((f) => f !== categorieName));
+
+  function handleFilterClick(categoryName) {
+    if (filtersList.includes(categoryName)) {
+      setFiltersList(filtersList.filter((f) => f !== categoryName));
     } else {
-      setFiltersList([...filtersList, categorieName]);
+      setFiltersList([...filtersList, categoryName]);
     }
   }
-
   function applyFiltersList() {
     getTransactionData(filtersList)
     setFilters(filtersList);
@@ -29,15 +29,15 @@ export default function FiltersCard({ selectedFilter, filtersList, setFiltersLis
       <CategoriesTittle>Categoria</CategoriesTittle>
       <CategoriesFilters>
         {categoriesList &&
-          categoriesList.map((categorie) => (
+          categoriesList.map((category) => (
             <FilterButton
-              key={categorie.id}
+              key={category.id}
               bgColor={primaryColor}
-              afterContent={selectedFilter(categorie.nome) ? "x" : "+"}
-              isSelected={selectedFilter(categorie.nome)}
-              onClick={() => handleFilterClick(categorie.nome)}
+              afterContent={selectedFilter(category.descricao) ? "x" : "+"}
+              isSelected={selectedFilter(category.descricao)}
+              onClick={() => handleFilterClick(category.descricao)}
             >
-              <span>{categorie.nome}</span>
+              <span>{category.descricao}</span>
             </FilterButton>
           ))}
       </CategoriesFilters>

@@ -71,7 +71,7 @@ export function SelectStyled({ name, label, options, value, onSelect, onChange }
       <SelectElement name={name} value={value} onSelect={onSelect} onChange={onChange}>
         {options.map((option) => (
           <option key={option.id} value={option.id}>
-            {option.nome}
+            {option.descricao}
           </option>
         ))}
       </SelectElement>

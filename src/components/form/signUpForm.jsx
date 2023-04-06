@@ -11,6 +11,9 @@ import { ModalContentForm, ModalTitle } from "../modal/modalStyled";
 import { userSignUp } from "../../api";
 import { useFormInput } from "../../lib/customHooks";
 import { useAuth } from "../../context";
+import logo from "../../assets/logo.svg";
+import { Logo } from "./loginFormStyled";
+import { createInputs } from "../basics/Input/createInputs";
 
 export default function SignUpForm() {
   const { isLoading, setLoading } = useAuth();
@@ -61,27 +64,67 @@ export default function SignUpForm() {
     }
   }
 
+  const inputModels = [
+    {
+      inputType: "input",
+      name: "name",
+      label: "Nome",
+      placeholder: "Digite seu nome",
+      type: "text",
+      onSelect: handleSelect,
+      ...name,
+    },
+    {
+      inputType: "input",
+      name: "email",
+      label: "E-mail",
+      placeholder: "Digite seu e-mail",
+      type: "email",
+      pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$",
+      title: "Insira um endereço de email válido.",
+      onSelect: handleSelect,
+      ...email,
+    },
+    {
+      inputType: "input",
+      name: "password",
+      label: "Senha",
+      placeholder: "Digite sua senha",
+      type: "password",
+      onSelect: handleSelect,
+      required: true,
+      ...password,
+    },
+    {
+      inputType: "input",
+      name: "confirmPassword",
+      label: "Senha",
+      placeholder: "Confirme sua senha",
+      type: "password",
+      onSelect: handleSelect,
+      required: true,
+      ...confirmPassword,
+    },
+  ];
+
+  const inputs = createInputs(inputModels);
+
   return (
     <SignUpContainer>
+      <Logo src={logo} />
       <SignUpContent onSubmit={handleSubmit}>
         <ModalTitle textColor={primaryColor}>Cadastre-se</ModalTitle>
-        <InputStyled name="name" label="Nome" type="text" placeholder="Nome" onSelect={handleSelect} {...name} />
+        {inputs}
         {warning.name && <SpanWarning>{warning.name}</SpanWarning>}
-
-        <InputStyled name="email" label="E-mail" type="text" placeholder="E-mail" onSelect={handleSelect} {...email} />
         {warning.email && <SpanWarning>{warning.email}</SpanWarning>}
-
-        <InputStyled name="password" label="Senha" type="password" placeholder="Senha" onSelect={handleSelect} {...password} />
         <SpanWarning>{warning.password}</SpanWarning>
-
-        <InputStyled name="confirmPassword" label="Confirmação de senha" type="password" placeholder="Confirme a senha" onSelect={handleSelect} {...confirmPassword} />
         {warning.confirmPassword && <SpanWarning>{warning.confirmPassword}</SpanWarning>}
         <SpanWarning>{spanWarning}</SpanWarning>
 
         <LoadingButton type="submit" isLoading={isLoading} text="Cadastrar">
           Cadastrar
         </LoadingButton>
-        <Link to="/">Já tem cadastro? Clique aqui!</Link>
+        <SignUpLink href="/">Já tem cadastro? Clique aqui!</SignUpLink>
       </SignUpContent>
     </SignUpContainer>
   );
@@ -91,8 +134,15 @@ const SignUpContainer = styled(Container)`
   flex-direction: column;
 `;
 
-const SignUpContent = styled(ModalContentForm)`
-  justify-content: space-around;
+const SignUpContent = styled.form`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  max-height: 770px;
+  padding: 2.5rem 1.5rem;
+  width: 25rem;
 `;
+
+const SignUpLink = styled.a`
+  margin-top: .6rem;
+`

@@ -81,8 +81,6 @@ export const ModalContentForm = styled.form`
   }
 `;
 
-export const ModalEditProfileContent = styled(ModalContentForm)``;
-
 export const ModalTitle = styled.strong`
   font-size: 1.5rem;
   color: ${(props) => props.textColor || "black"};

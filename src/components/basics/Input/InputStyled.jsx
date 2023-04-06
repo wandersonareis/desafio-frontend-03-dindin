@@ -43,11 +43,11 @@ const NumberInput = styled(InputElement)`
 `;
 const SelectElement = styled(InputElement.withComponent("select"))``;
 
-function InputStyled({ name, label, placeholder, type, value, onSelect, onChange }) {
+function InputStyled({ name, label, placeholder, type, value, onSelect, onChange, pattern, title }) {
   return (
     <InputContainer>
       <InputLabel>{label}</InputLabel>
-      <InputElement name={name} type={type} placeholder={placeholder} value={value} onSelect={onSelect} onChange={onChange} autocomplete required spellcheck="false" />
+      <InputElement name={name} type={type} placeholder={placeholder} value={value} onSelect={onSelect} onChange={onChange} pattern={pattern} title={title} />
     </InputContainer>
   );
 }

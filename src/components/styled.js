@@ -6,8 +6,8 @@ export const Background = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: min(100vw, 1440px);
-  height: min(100vh - 2.5rem, 1024px - 2.5rem);
+  width: 100%;
+  height: 100%;
   padding: 3% 2%;
   background: linear-gradient(to right, rgba(5, 237, 227, 0.5) 0%, rgba(100, 95, 251, 0.5) 100%, rgba(100, 95, 251, 0.5) 100%), url(${bgImage});
   background-size: cover;

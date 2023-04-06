@@ -16,8 +16,10 @@
 }
 
 body {
-  width: min(100vw, 1440px);
-  height: min(100vh, 1024px);
+  width: 100vw;
+  max-width: 1440px;
+  height: 100vh;
+  max-height: 1024px;
   margin: 0 auto;
 }
 

@@ -1,28 +1,31 @@
 import styled from "@emotion/styled";
-import Header from "../../components/Header";
+import bgImage from "../../assets/bg_main.png";
 import SignInForm from "../../components/form/signInForm";
-import { Background } from "../../components/styled";
 
 export default function SignIn() {
   return (
-    <Background>
-    <LoginPageContainer>    
-        <Header />
-        <SignInForm />
-        </LoginPageContainer>  
-    </Background>
+    <LoginPageContainer>
+      <SignInForm />
+    </LoginPageContainer>
   );
 }
 
-const LoginPageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const LoginPageContainer = styled.main`
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-image: url(${bgImage});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3% 2%;
+  position: relative;
 
   @media (min-width: 1024px) {
     justify-content: space-around;
-    align-items: space-between;
+    padding: 0 7%;
   }
 `;

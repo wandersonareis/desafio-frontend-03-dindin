@@ -11,12 +11,11 @@ const Button = styled.button`
   font-size: 1em;
   font-weight: 500;
   color: ${whitePureColor};
-  border: none;
   border-radius: 5px;
   padding: 0.6em 1.2em;
-  background: linear-gradient(to right, hsla(200, 90%, 50%, 0.8) 0%, hsla(232, 95%, 63%, 0.8) 50%, hsla(242, 95%, 53%, 0.7) 100%);
+  border: none;
   outline: none;
-  box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 0px 0px hsla(232, 95%, 63%, 0.8);
   transition: transform 0.2s ease-in-out;
 
   &:hover {
@@ -34,6 +33,7 @@ const Button = styled.button`
 `;
 
 const Loading = styled(Button)`
+  background: linear-gradient(to right, hsla(200, 90%, 50%, 0.8) 0%, hsla(232, 95%, 63%, 0.8) 50%, hsla(242, 95%, 53%, 0.7) 100%);
   &:disabled {
     cursor: progress;
   }
@@ -41,6 +41,8 @@ const Loading = styled(Button)`
 
 export const PrimaryButton = styled(Button)`
   width: ${(props) => props.width || "100%"};
+  margin-top: 2rem;
+  background: linear-gradient(to right, hsla(200, 90%, 50%, 0.8) 0%, hsla(232, 95%, 63%, 0.8) 50%, hsla(242, 95%, 53%, 0.7) 100%);
 `;
 
 export const AddRegisterButton = styled(Button)`

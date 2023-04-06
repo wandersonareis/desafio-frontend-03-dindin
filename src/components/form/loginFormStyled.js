@@ -1,14 +1,25 @@
 import styled from "@emotion/styled";
 import { highlightColor, whitePureColor } from "../colors";
-import { ModalContentForm } from "../modal/modalStyled";
 
-export const LoginContainer = styled.main`
+export const Logo = styled.img`
+  position: absolute;
+  top: 2%;
+  left: 2%;
+
+  @media (min-width: 1024px) {
+    top: 4rem;
+    left: 7%;
+  }
+`;
+
+export const LoginContainer = styled.div`
   --auto-grid-min-size: 20rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
   grid-gap: 1rem;
-  height: 100%;
+  //height: 100%;
   align-items: center;
+  justify-items: end;
   justify-content: center;
   margin-top: 4%;
 
@@ -16,20 +27,28 @@ export const LoginContainer = styled.main`
     justify-content: end;
   }
 `;
-export const LoginFormContainer = styled(ModalContentForm)`
+
+export const LoginFormContainer = styled.form`
+  background-color: ${whitePureColor};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  gap: .5rem;
-  max-height: 30rem;
-  padding: 2.5%;
+  padding: 40px 24px;
+  min-height: 350px;
+  width: 400px;
   @media (min-width: 1024px) {
     max-width: max-content;
+    min-height: 420px;
   }
 `;
 export const LoginLeftContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   gap: 20px;
 `;
+
 export const TittleParagraph = styled.h1`
   font-size: calc(2.3rem + 0.5vw);
   color: ${whitePureColor};

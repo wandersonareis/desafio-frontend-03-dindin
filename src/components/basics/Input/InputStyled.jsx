@@ -8,7 +8,6 @@ const InputContainer = styled.div`
   width: 100%;
   max-width: 449px;
   margin-bottom: 2%;
-  padding: 0 3%;
 
   @media (min-width: 967px) {
     width: 22rem;
@@ -28,7 +27,7 @@ const InputElement = styled.input`
   border-radius: 5px;
   height: 3.5rem;
   padding: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 `;
 
 const Prefix = styled.span`
@@ -48,7 +47,7 @@ function InputStyled({ name, label, placeholder, type, value, onSelect, onChange
   return (
     <InputContainer>
       <InputLabel>{label}</InputLabel>
-      <InputElement name={name} type={type} placeholder={placeholder} value={value} onSelect={onSelect} onChange={onChange} />
+      <InputElement name={name} type={type} placeholder={placeholder} value={value} onSelect={onSelect} onChange={onChange} autocomplete required spellcheck="false" />
     </InputContainer>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import InputStyled from "../basics/InputStyled";
+import InputStyled from "../basics/Input/InputStyled";
 import { Link, useNavigate } from "react-router-dom";
 import { LoadingButton } from "../buttons";
 import { primaryColor } from "../colors";

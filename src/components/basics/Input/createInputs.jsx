@@ -1,4 +1,4 @@
-import InputStyled, { SelectStyled } from "../InputStyled";
+import InputStyled, { SelectStyled } from "./InputStyled";
 
 function FormInput({ inputType, ...rest }) {
   if (inputType === "select") {

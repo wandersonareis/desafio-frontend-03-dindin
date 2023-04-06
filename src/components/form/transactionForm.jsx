@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import InputStyled, { NumberInputStyled, SelectStyled } from "../basics/InputStyled";
+import InputStyled, { NumberInputStyled, SelectStyled } from "../basics/Input/InputStyled";
 import { ModalCloseButton, ModalContainer, ModalContentForm, ModalTitle } from "../modal/modalStyled";
 import { successColor, warningColor } from "../colors";
 import { CreditsTransactionTypeButton, DebitsTransactionTypeButton, LoadingButton } from "../buttons";

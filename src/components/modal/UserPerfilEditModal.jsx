@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputStyled from "../basics/InputStyled";
+import InputStyled from "../basics/Input/InputStyled";
 import { LoadingButton } from "../buttons";
 import { schemaPasswordConfirmValidation } from "../../util/schemas";
 import { SpanWarning } from "../styled";

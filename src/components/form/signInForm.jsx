@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getObjectItem } from "../../util/storage";
-import InputStyled from "../basics/InputStyled";
 import { ModalTitle } from "../modal/modalStyled";
 import { LoadingButton, PrimaryButton } from "../buttons";
 import { primaryColor } from "../colors";
@@ -12,9 +11,12 @@ import {
   LoginContainer,
   LoginFormContainer,
   LoginLeftContainer,
+  Logo,
   Paragraph,
   TittleParagraph
 } from "./loginFormStyled";
+import { createInputs } from "../basics/Input/createInputs";
+import logo from "../../assets/logo.svg";
 
 export default function SignInForm() {
   const { resetValue: resetEmail, ...email } = useFormInput("");
@@ -49,7 +51,7 @@ export default function SignInForm() {
         return;
       }
 
-      await onLogin(email.value, password.value)
+      await onLogin(email.value, password.value);
 
       resetEmail();
       resetPassword();
@@ -64,26 +66,50 @@ export default function SignInForm() {
     }
   }
 
+  const inputModels = [
+    {
+      inputType: "input",
+      name: "email",
+      label: "E-mail",
+      placeholder: "Digite seu email",
+      type: "email",
+      onSelect: handleSelect,
+      ...email
+    },
+    {
+      inputType: "input",
+      name: "password",
+      label: "Senha",
+      placeholder: "Digite sua senha",
+      type: "password",
+      onSelect: handleSelect,
+      required: true,
+      ...password
+    }
+  ];
+
+  const inputs = createInputs(inputModels);
+
   return (
     <LoginContainer>
+      <Logo src={logo} />
       <LoginLeftContainer>
         <TittleParagraph>
           Controle suas <strong>finanças</strong>,<br />
           sem planilha chata.
         </TittleParagraph>
-        <Paragraph>Organizar as suas finanças nunca foi tão fácil, com o DINDIN, você tem tudo num único lugar e em um clique de distância.</Paragraph>
+        <Paragraph>Organizar as suas finanças nunca foi tão fácil, com o DINDIN, você tem tudo num único lugar e em um
+          clique de distância.</Paragraph>
         <PrimaryButton width="449px" onClick={signUpClick}>
           Cadastre-se
         </PrimaryButton>
       </LoginLeftContainer>
       <LoginFormContainer onSubmit={handleSubmit}>
         <ModalTitle textColor={primaryColor}>Login</ModalTitle>
-        <InputStyled name="email" type="text" label="E-mail" placeholder="Digite o e-mail" onSelect={handleSelect} {...email} />
-        <InputStyled name="passord" type="password" label="Senha" placeholder="Digite uma senha" onSelect={handleSelect} {...password} />
+        {inputs}
         <SpanWarning>{spanWarning}</SpanWarning>
         <LoadingButton type="submit" isLoading={isLoading} text="Entrar" />
       </LoginFormContainer>
     </LoginContainer>
   );
 }
-

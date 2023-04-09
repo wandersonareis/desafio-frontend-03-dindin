@@ -1,19 +1,18 @@
 import React, { useState } from "react";
+import logo from "../../assets/logo.svg";
 import styled from "@emotion/styled";
-import InputStyled from "../basics/Input/InputStyled";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LoadingButton } from "../buttons";
+import { Logo } from "./loginFormStyled";
 import { primaryColor } from "../colors";
 import { schemaPasswordConfirmValidation } from "../../util/schemas";
 import { Container, SpanWarning } from "../styled";
 import { handleErrors } from "../../handleErros";
-import { ModalContentForm, ModalTitle } from "../modal/modalStyled";
+import { ModalTitle } from "../modal/modalStyled";
 import { userSignUp } from "../../api";
 import { useFormInput } from "../../lib/customHooks";
 import { useAuth } from "../../context";
-import logo from "../../assets/logo.svg";
-import { Logo } from "./loginFormStyled";
-import { createInputs } from "../basics/Input/createInputs";
+import { UserForm } from "./";
 
 export default function SignUpForm() {
   const { isLoading, setLoading } = useAuth();
@@ -64,57 +63,12 @@ export default function SignUpForm() {
     }
   }
 
-  const inputModels = [
-    {
-      inputType: "input",
-      name: "name",
-      label: "Nome",
-      placeholder: "Digite seu nome",
-      type: "text",
-      onSelect: handleSelect,
-      ...name,
-    },
-    {
-      inputType: "input",
-      name: "email",
-      label: "E-mail",
-      placeholder: "Digite seu e-mail",
-      type: "email",
-      pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$",
-      title: "Insira um endereço de email válido.",
-      onSelect: handleSelect,
-      ...email,
-    },
-    {
-      inputType: "input",
-      name: "password",
-      label: "Senha",
-      placeholder: "Digite sua senha",
-      type: "password",
-      onSelect: handleSelect,
-      required: true,
-      ...password,
-    },
-    {
-      inputType: "input",
-      name: "confirmPassword",
-      label: "Senha",
-      placeholder: "Confirme sua senha",
-      type: "password",
-      onSelect: handleSelect,
-      required: true,
-      ...confirmPassword,
-    },
-  ];
-
-  const inputs = createInputs(inputModels);
-
   return (
     <SignUpContainer>
       <Logo src={logo} />
       <SignUpContent onSubmit={handleSubmit}>
         <ModalTitle textColor={primaryColor}>Cadastre-se</ModalTitle>
-        {inputs}
+        <UserForm handleSelect={handleSelect} name={name} email={email} password={password} confirmPassword={confirmPassword} />
         {warning.name && <SpanWarning>{warning.name}</SpanWarning>}
         {warning.email && <SpanWarning>{warning.email}</SpanWarning>}
         <SpanWarning>{warning.password}</SpanWarning>
@@ -144,5 +98,5 @@ const SignUpContent = styled.form`
 `;
 
 const SignUpLink = styled.a`
-  margin-top: .6rem;
-`
+  margin-top: 0.6rem;
+`;

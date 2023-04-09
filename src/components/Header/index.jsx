@@ -23,7 +23,6 @@ export default function Header() {
     <MainHeader>
       <DindinHeader>
         <img src={logoDinDin} alt="Logo Dindin" />
-        <span>DinDin</span>
       </DindinHeader>
       {isLoggedIn && (
         <HeaderContainer>

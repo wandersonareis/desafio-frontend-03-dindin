@@ -179,7 +179,7 @@ Error generating stack: `+o.message+`
   top: 2%;
   left: 2%;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     top: 4rem;
     left: 7%;
   }
@@ -188,13 +188,12 @@ Error generating stack: `+o.message+`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
   grid-gap: 1rem;
-  //height: 100%;
   align-items: center;
   justify-items: end;
   justify-content: center;
   margin-top: 4%;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     justify-content: end;
   }
 `,ux=F.form`
@@ -206,7 +205,7 @@ Error generating stack: `+o.message+`
   padding: 40px 24px;
   min-height: 350px;
   width: 400px;
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     max-width: max-content;
     min-height: 420px;
   }
@@ -234,7 +233,7 @@ Error generating stack: `+o.message+`
     color: ${Vm};
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     max-width: 33rem;
   }
 `;function Yn(e){this._maxSize=e,this.clear()}Yn.prototype.clear=function(){this._size=0,this._values=Object.create(null)};Yn.prototype.get=function(e){return this._values[e]};Yn.prototype.set=function(e,t){return this._size>=this._maxSize&&this.clear(),e in this._values||this._size++,this._values[e]=t};var px=/[^.^\]^[]+|(?=\[\]|\.\.)/g,qm=/^\d+$/,hx=/^\d/,mx=/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g,gx=/^\s*(['"]?)(.*?)(\1)\s*$/,Cc=512,Fd=new Yn(Cc),Ld=new Yn(Cc),Nd=new Yn(Cc),In={Cache:Yn,split:cu,normalizePath:ra,setter:function(e){var t=ra(e);return Ld.get(e)||Ld.set(e,function(r,i){for(var o=0,l=t.length,s=r;o<l-1;){var a=t[o];if(a==="__proto__"||a==="constructor"||a==="prototype")return r;s=s[t[o++]]}s[t[o]]=i})},getter:function(e,t){var n=ra(e);return Nd.get(e)||Nd.set(e,function(i){for(var o=0,l=n.length;o<l;)if(i!=null||!t)i=i[n[o++]];else return;return i})},join:function(e){return e.reduce(function(t,n){return t+(_c(n)||qm.test(n)?"["+n+"]":(t?".":"")+n)},"")},forEach:function(e,t,n){yx(Array.isArray(e)?e:cu(e),t,n)}};function ra(e){return Fd.get(e)||Fd.set(e,cu(e).map(function(t){return t.replace(gx,"$2")}))}function cu(e){return e.match(px)||[""]}function yx(e,t,n){var r=e.length,i,o,l,s;for(o=0;o<r;o++)i=e[o],i&&(xx(i)&&(i='"'+i+'"'),s=_c(i),l=!s&&/^\d+$/.test(i),t.call(n,i,s,l,o,e))}function _c(e){return typeof e=="string"&&e&&["'",'"'].indexOf(e.charAt(0))!==-1}function vx(e){return e.match(hx)&&!e.match(qm)}function wx(e){return mx.test(e)}function xx(e){return!_c(e)&&(vx(e)||wx(e))}const Sx=/[A-Z\xc0-\xd6\xd8-\xde]?[a-z\xdf-\xf6\xf8-\xff]+(?:['’](?:d|ll|m|re|s|t|ve))?(?=[\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000]|[A-Z\xc0-\xd6\xd8-\xde]|$)|(?:[A-Z\xc0-\xd6\xd8-\xde]|[^\ud800-\udfff\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\d+\u2700-\u27bfa-z\xdf-\xf6\xf8-\xffA-Z\xc0-\xd6\xd8-\xde])+(?:['’](?:D|LL|M|RE|S|T|VE))?(?=[\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000]|[A-Z\xc0-\xd6\xd8-\xde](?:[a-z\xdf-\xf6\xf8-\xff]|[^\ud800-\udfff\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\d+\u2700-\u27bfa-z\xdf-\xf6\xf8-\xffA-Z\xc0-\xd6\xd8-\xde])|$)|[A-Z\xc0-\xd6\xd8-\xde]?(?:[a-z\xdf-\xf6\xf8-\xff]|[^\ud800-\udfff\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\d+\u2700-\u27bfa-z\xdf-\xf6\xf8-\xffA-Z\xc0-\xd6\xd8-\xde])+(?:['’](?:d|ll|m|re|s|t|ve))?|[A-Z\xc0-\xd6\xd8-\xde]+(?:['’](?:D|LL|M|RE|S|T|VE))?|\d*(?:1ST|2ND|3RD|(?![123])\dTH)(?=\b|[a-z_])|\d*(?:1st|2nd|3rd|(?![123])\dth)(?=\b|[A-Z_])|\d+|(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe2f\u20d0-\u20ff]|\ud83c[\udffb-\udfff])?(?:\u200d(?:[^\ud800-\udfff]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe2f\u20d0-\u20ff]|\ud83c[\udffb-\udfff])?)*/g,us=e=>e.match(Sx)||[],cs=e=>e[0].toUpperCase()+e.slice(1),Pc=(e,t)=>us(e).join(t).toLowerCase(),Ym=e=>us(e).reduce((t,n)=>`${t}${t?n[0].toUpperCase()+n.slice(1).toLowerCase():n.toLowerCase()}`,""),Ex=e=>cs(Ym(e)),kx=e=>Pc(e,"_"),Cx=e=>Pc(e,"-"),_x=e=>cs(Pc(e," ")),Px=e=>us(e).map(cs).join(" ");var ia={words:us,upperFirst:cs,camelCase:Ym,pascalCase:Ex,snakeCase:kx,kebabCase:Cx,sentenceCase:_x,titleCase:Px},_l={},Rx={get exports(){return _l},set exports(e){_l=e}};Rx.exports=function(e){return Gm(Tx(e),e)};_l.array=Gm;function Gm(e,t){var n=e.length,r=new Array(n),i={},o=n,l=Ox(t),s=Dx(e);for(t.forEach(function(u){if(!s.has(u[0])||!s.has(u[1]))throw new Error("Unknown node. There is an unknown node in the supplied edges.")});o--;)i[o]||a(e[o],o,new Set);return r;function a(u,f,p){if(p.has(u)){var c;try{c=", node was:"+JSON.stringify(u)}catch{c=""}throw new Error("Cyclic dependency"+c)}if(!s.has(u))throw new Error("Found unknown node. Make sure to provided all involved nodes. Unknown node: "+JSON.stringify(u));if(!i[f]){i[f]=!0;var v=l.get(u)||new Set;if(v=Array.from(v),f=v.length){p.add(u);do{var y=v[--f];a(y,s.get(y),p)}while(f);p.delete(u)}r[--n]=u}}}function Tx(e){for(var t=new Set,n=0,r=e.length;n<r;n++){var i=e[n];t.add(i[0]),t.add(i[1])}return Array.from(t)}function Ox(e){for(var t=new Map,n=0,r=e.length;n<r;n++){var i=e[n];t.has(i[0])||t.set(i[0],new Set),t.has(i[1])||t.set(i[1],new Set),t.get(i[0]).add(i[1])}return t}function Dx(e){for(var t=new Map,n=0,r=e.length;n<r;n++)t.set(e[n],n);return t}const Fx=Object.prototype.toString,Lx=Error.prototype.toString,Nx=RegExp.prototype.toString,Ax=typeof Symbol<"u"?Symbol.prototype.toString:()=>"",$x=/^Symbol\((.*)\)(.*)$/;function Mx(e){return e!=+e?"NaN":e===0&&1/e<0?"-0":""+e}function Ad(e,t=!1){if(e==null||e===!0||e===!1)return""+e;const n=typeof e;if(n==="number")return Mx(e);if(n==="string")return t?`"${e}"`:e;if(n==="function")return"[Function "+(e.name||"anonymous")+"]";if(n==="symbol")return Ax.call(e).replace($x,"Symbol($1)");const r=Fx.call(e).slice(8,-1);return r==="Date"?isNaN(e.getTime())?""+e:e.toISOString(e):r==="Error"||e instanceof Error?"["+Lx.call(e)+"]":r==="RegExp"?Nx.call(e):null}function Sr(e,t){let n=Ad(e,t);return n!==null?n:JSON.stringify(e,function(r,i){let o=Ad(this[r],t);return o!==null?o:i},2)}function Xm(e){return e==null?[]:[].concat(e)}let bx=/\$\{\s*(\w+)\s*\}/g;class qe extends Error{static formatError(t,n){const r=n.label||n.path||"this";return r!==n.path&&(n=Object.assign({},n,{path:r})),typeof t=="string"?t.replace(bx,(i,o)=>Sr(n[o])):typeof t=="function"?t(n):t}static isError(t){return t&&t.name==="ValidationError"}constructor(t,n,r,i){super(),this.value=void 0,this.path=void 0,this.type=void 0,this.errors=void 0,this.params=void 0,this.inner=void 0,this.name="ValidationError",this.value=n,this.path=r,this.type=i,this.errors=[],this.inner=[],Xm(t).forEach(o=>{qe.isError(o)?(this.errors.push(...o.errors),this.inner=this.inner.concat(o.inner.length?o.inner:o)):this.errors.push(o)}),this.message=this.errors.length>1?`${this.errors.length} errors occurred`:this.errors[0],Error.captureStackTrace&&Error.captureStackTrace(this,qe)}}let Vt={default:"${path} is invalid",required:"${path} is a required field",defined:"${path} must be defined",notNull:"${path} cannot be null",oneOf:"${path} must be one of the following values: ${values}",notOneOf:"${path} must not be one of the following values: ${values}",notType:({path:e,type:t,value:n,originalValue:r})=>{const i=r!=null&&r!==n?` (cast from the value \`${Sr(r,!0)}\`).`:".";return t!=="mixed"?`${e} must be a \`${t}\` type, but the final value was: \`${Sr(n,!0)}\``+i:`${e} must match the configured type. The validated value was: \`${Sr(n,!0)}\``+i}},ht={length:"${path} must be exactly ${length} characters",min:"${path} must be at least ${min} characters",max:"${path} must be at most ${max} characters",matches:'${path} must match the following: "${regex}"',email:"${path} must be a valid email",url:"${path} must be a valid URL",uuid:"${path} must be a valid UUID",trim:"${path} must be a trimmed string",lowercase:"${path} must be a lowercase string",uppercase:"${path} must be a upper case string"},zx={min:"${path} must be greater than or equal to ${min}",max:"${path} must be less than or equal to ${max}",lessThan:"${path} must be less than ${less}",moreThan:"${path} must be greater than ${more}",positive:"${path} must be a positive number",negative:"${path} must be a negative number",integer:"${path} must be an integer"},fu={min:"${path} field must be later than ${min}",max:"${path} field must be at earlier than ${max}"},jx={isValue:"${path} field must be ${value}"},du={noUnknown:"${path} field has unspecified keys: ${unknown}"},Ix={min:"${path} field must have at least ${min} items",max:"${path} field must have less than or equal to ${max} items",length:"${path} must have ${length} items"};Object.assign(Object.create(null),{mixed:Vt,string:ht,number:zx,date:fu,object:du,array:Ix,boolean:jx});const Rc=e=>e&&e.__isYupSchema__;class Pl{static fromOptions(t,n){if(!n.then&&!n.otherwise)throw new TypeError("either `then:` or `otherwise:` is required for `when()` conditions");let{is:r,then:i,otherwise:o}=n,l=typeof r=="function"?r:(...s)=>s.every(a=>a===r);return new Pl(t,(s,a)=>{var u;let f=l(...s)?i:o;return(u=f==null?void 0:f(a))!=null?u:a})}constructor(t,n){this.fn=void 0,this.refs=t,this.refs=t,this.fn=n}resolve(t,n){let r=this.refs.map(o=>o.getValue(n==null?void 0:n.value,n==null?void 0:n.parent,n==null?void 0:n.context)),i=this.fn(r,t,n);if(i===void 0||i===t)return t;if(!Rc(i))throw new TypeError("conditions must return a schema object");return i.resolve(n)}}const To={context:"$",value:"."};function Ux(e,t){return new On(e,t)}class On{constructor(t,n={}){if(this.key=void 0,this.isContext=void 0,this.isValue=void 0,this.isSibling=void 0,this.path=void 0,this.getter=void 0,this.map=void 0,typeof t!="string")throw new TypeError("ref must be a string, got: "+t);if(this.key=t.trim(),t==="")throw new TypeError("ref must be a non-empty string");this.isContext=this.key[0]===To.context,this.isValue=this.key[0]===To.value,this.isSibling=!this.isContext&&!this.isValue;let r=this.isContext?To.context:this.isValue?To.value:"";this.path=this.key.slice(r.length),this.getter=this.path&&In.getter(this.path,!0),this.map=n.map}getValue(t,n,r){let i=this.isContext?r:this.isValue?t:n;return this.getter&&(i=this.getter(i||{})),this.map&&(i=this.map(i)),i}cast(t,n){return this.getValue(t,n==null?void 0:n.parent,n==null?void 0:n.context)}resolve(){return this}describe(){return{type:"ref",key:this.key}}toString(){return`Ref(${this.key})`}static isRef(t){return t&&t.__isYupRef}}On.prototype.__isYupRef=!0;const hn=e=>e==null;function Jn(e){function t({value:n,path:r="",options:i,originalValue:o,schema:l},s,a){const{name:u,test:f,params:p,message:c,skipAbsent:v}=e;let{parent:y,context:g,abortEarly:x=l.spec.abortEarly}=i;function h(L){return On.isRef(L)?L.getValue(n,y,g):L}function d(L={}){const ne=Object.assign({value:n,originalValue:o,label:l.spec.label,path:L.path||r,spec:l.spec},p,L.params);for(const Et of Object.keys(ne))ne[Et]=h(ne[Et]);const rt=new qe(qe.formatError(L.message||c,ne),n,ne.path,L.type||u);return rt.params=ne,rt}const m=x?s:a;let w={path:r,parent:y,type:u,from:i.from,createError:d,resolve:h,options:i,originalValue:o,schema:l};const O=L=>{qe.isError(L)?m(L):L?a(null):m(d())},D=L=>{qe.isError(L)?m(L):s(L)},P=v&&hn(n);if(!i.sync){try{Promise.resolve(P?!0:f.call(w,n,w)).then(O,D)}catch(L){D(L)}return}let N;try{var K;if(N=P?!0:f.call(w,n,w),typeof((K=N)==null?void 0:K.then)=="function")throw new Error(`Validation test of type: "${w.type}" returned a Promise during a synchronous validate. This test will finish after the validate call has returned`)}catch(L){D(L);return}O(N)}return t.OPTIONS=e,t}function Bx(e,t,n,r=n){let i,o,l;return t?(In.forEach(t,(s,a,u)=>{let f=a?s.slice(1,s.length-1):s;e=e.resolve({context:r,parent:i,value:n});let p=e.type==="tuple",c=u?parseInt(f,10):0;if(e.innerType||p){if(p&&!u)throw new Error(`Yup.reach cannot implicitly index into a tuple type. the path part "${l}" must contain an index to the tuple element, e.g. "${l}[0]"`);if(n&&c>=n.length)throw new Error(`Yup.reach cannot resolve an array item at index: ${s}, in the path: ${t}. because there is no value at that index. `);i=n,n=n&&n[c],e=p?e.spec.types[c]:e.innerType}if(!u){if(!e.fields||!e.fields[f])throw new Error(`The schema does not contain the path: ${t}. (failed at: ${l} which is a type: "${e.type}")`);i=n,n=n&&n[f],e=e.fields[f]}o=f,l=a?"["+s+"]":"."+s}),{schema:e,parent:i,parentPath:o}):{parent:i,parentPath:t,schema:e}}class Rl extends Set{describe(){const t=[];for(const n of this.values())t.push(On.isRef(n)?n.describe():n);return t}resolveAll(t){let n=[];for(const r of this.values())n.push(t(r));return n}clone(){return new Rl(this.values())}merge(t,n){const r=this.clone();return t.forEach(i=>r.add(i)),n.forEach(i=>r.delete(i)),r}}function dr(e,t=new Map){if(Rc(e)||!e||typeof e!="object")return e;if(t.has(e))return t.get(e);let n;if(e instanceof Date)n=new Date(e.getTime()),t.set(e,n);else if(e instanceof RegExp)n=new RegExp(e),t.set(e,n);else if(Array.isArray(e)){n=new Array(e.length),t.set(e,n);for(let r=0;r<e.length;r++)n[r]=dr(e[r],t)}else if(e instanceof Map){n=new Map,t.set(e,n);for(const[r,i]of e.entries())n.set(r,dr(i,t))}else if(e instanceof Set){n=new Set,t.set(e,n);for(const r of e)n.add(dr(r,t))}else if(e instanceof Object){n={},t.set(e,n);for(const[r,i]of Object.entries(e))n[r]=dr(i,t)}else throw Error(`Unable to clone ${e}`);return n}class $t{constructor(t){this.type=void 0,this.deps=[],this.tests=void 0,this.transforms=void 0,this.conditions=[],this._mutate=void 0,this.internalTests={},this._whitelist=new Rl,this._blacklist=new Rl,this.exclusiveTests=Object.create(null),this._typeCheck=void 0,this.spec=void 0,this.tests=[],this.transforms=[],this.withMutation(()=>{this.typeError(Vt.notType)}),this.type=t.type,this._typeCheck=t.check,this.spec=Object.assign({strip:!1,strict:!1,abortEarly:!0,recursive:!0,nullable:!1,optional:!0,coerce:!0},t==null?void 0:t.spec),this.withMutation(n=>{n.nonNullable()})}get _type(){return this.type}clone(t){if(this._mutate)return t&&Object.assign(this.spec,t),this;const n=Object.create(Object.getPrototypeOf(this));return n.type=this.type,n._typeCheck=this._typeCheck,n._whitelist=this._whitelist.clone(),n._blacklist=this._blacklist.clone(),n.internalTests=Object.assign({},this.internalTests),n.exclusiveTests=Object.assign({},this.exclusiveTests),n.deps=[...this.deps],n.conditions=[...this.conditions],n.tests=[...this.tests],n.transforms=[...this.transforms],n.spec=dr(Object.assign({},this.spec,t)),n}label(t){let n=this.clone();return n.spec.label=t,n}meta(...t){if(t.length===0)return this.spec.meta;let n=this.clone();return n.spec.meta=Object.assign(n.spec.meta||{},t[0]),n}withMutation(t){let n=this._mutate;this._mutate=!0;let r=t(this);return this._mutate=n,r}concat(t){if(!t||t===this)return this;if(t.type!==this.type&&this.type!=="mixed")throw new TypeError(`You cannot \`concat()\` schema's of different types: ${this.type} and ${t.type}`);let n=this,r=t.clone();const i=Object.assign({},n.spec,r.spec);return r.spec=i,r.internalTests=Object.assign({},n.internalTests,r.internalTests),r._whitelist=n._whitelist.merge(t._whitelist,t._blacklist),r._blacklist=n._blacklist.merge(t._blacklist,t._whitelist),r.tests=n.tests,r.exclusiveTests=n.exclusiveTests,r.withMutation(o=>{t.tests.forEach(l=>{o.test(l.OPTIONS)})}),r.transforms=[...n.transforms,...r.transforms],r}isType(t){return t==null?!!(this.spec.nullable&&t===null||this.spec.optional&&t===void 0):this._typeCheck(t)}resolve(t){let n=this;if(n.conditions.length){let r=n.conditions;n=n.clone(),n.conditions=[],n=r.reduce((i,o)=>o.resolve(i,t),n),n=n.resolve(t)}return n}resolveOptions(t){var n,r,i;return Object.assign({},t,{from:t.from||[],strict:(n=t.strict)!=null?n:this.spec.strict,abortEarly:(r=t.abortEarly)!=null?r:this.spec.abortEarly,recursive:(i=t.recursive)!=null?i:this.spec.recursive})}cast(t,n={}){let r=this.resolve(Object.assign({value:t},n)),i=n.assert==="ignore-optionality",o=r._cast(t,n);if(n.assert!==!1&&!r.isType(o)){if(i&&hn(o))return o;let l=Sr(t),s=Sr(o);throw new TypeError(`The value of ${n.path||"field"} could not be cast to a value that satisfies the schema type: "${r.type}". 
@@ -265,7 +264,7 @@ attempted value: ${l}
   background-color: ${Kw};
   z-index: 2;
 
-  @media (min-width: 767px) {
+  @media (min-width: 967px) {
     align-items: center;
   }
 `,iS=F(Tc.withComponent("td"))``,pu=F.div`
@@ -309,17 +308,17 @@ attempted value: ${l}
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-height: 700px;
   background-color: ${nn};
   border-radius: 20px;
   box-shadow: 0 0 10px ${Zi};
-  padding: 2%;
+  padding: 4%;
+  margin: 2%;
+  gap: 1rem;
 
-  @media (min-width: 767px) {
+  @media (min-width: 967px) {
     justify-content: space-around;
     width: auto;
-    height: 100%;
-    gap: 0.5rem;
+    max-height: 770px;
   }
 `,eo=F.strong`
   font-size: 1.5rem;
@@ -389,7 +388,7 @@ attempted value: ${l}
   padding: 3% 2%;
   position: relative;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     justify-content: space-around;
     padding: 0 7%;
   }
@@ -407,7 +406,7 @@ attempted value: ${l}
   padding: 3% 2%;
   position: relative;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     justify-content: space-around;
     padding: 0 7%;
   }
@@ -427,7 +426,6 @@ attempted value: ${l}
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 1.5rem;
 
   @media (max-width: 767px) {
     overflow-x: auto;
@@ -437,10 +435,9 @@ attempted value: ${l}
   --auto-grid-min-size: 20rem;
   display: grid;
   grid-template-columns: 1fr;
-  justify-self: center;
   grid-gap: 1rem;
 
-  @media (min-width: 996px) {
+  @media (min-width: 967px) {
     grid-template-columns: auto minmax(var(--auto-grid-min-size), 1fr);
   }
 `,sk="/desafio-frontend-03-dindin/assets/profile-logo-f5f5efb5.svg",ak="/desafio-frontend-03-dindin/assets/logout-11f9cbe8.svg";function uk({onClose:e}){const t=ys(),{token:n,user:r,setUserData:i,isLoading:o,setLoading:l}=nt(),{resetValue:s,...a}=Ft(r.name),{resetValue:u,...f}=Ft(r.email),{resetValue:p,...c}=Ft(""),{resetValue:v,...y}=Ft(""),[g,x]=_.useState({}),[h,d]=_.useState("");function m(){x({}),d("")}function w(){s(),u(),p(),v()}async function O(D){D.preventDefault();try{l();const P={name:a.value,email:f.value,password:c.value,confirmPassword:y.value};await n0.validate(P,{abortEarly:!1}),n&&await EE(n,P.name,P.email,P.password),P0({...t,nome:P.name,email:P.email});const N=await R0(n);i({name:N.nome,email:N.email}),w(),e()}catch(P){console.log(P),r0(P,d,x)}finally{l()}}return E(Tc,{children:W(i0,{onSubmit:O,children:[W(pu,{children:[E(eo,{children:"Editar Perfil"}),E(o0,{onClick:e,children:"X"})]}),E(D0,{handleSelect:m,name:a,email:f,password:c,confirmPassword:y}),g.name&&E(vt,{children:g.name}),g.email&&E(vt,{children:g.email}),g.password&&E(vt,{children:g.password}),g.confirmPassword&&E(vt,{children:g.confirmPassword}),E(vt,{children:h}),E(as,{type:"submit",text:"Confirmar",isLoading:o})]})})}const Qd={type:!1,value:Ic(""),category_id:1,date:"2023-03-01",description:""};function ck({isOpen:e,onClose:t}){const[n,r]=_.useState(Qd),{token:i,setLoading:o,getTransactionData:l}=nt();async function s(a){a.preventDefault();try{o();const u={tipo:`${n.type?"entrada":"saida"}`,descricao:n.description,valor:F0(n.value),data:N0(n.date),categoria_id:n.category_id};await DE(u,i),r(Qd),await l(),t()}catch(u){console.log(u)}finally{o()}}return e?E(Tc,{children:E(A0,{tittle:"Adicionar Registro",onClose:t,transactionObject:n,handleSubmit:s,setTransactionObject:r})}):null}function fk({onClose:e,transactionToUpdate:t,setTransactionToUpdate:n}){const{token:r,isLoading:i,setLoading:o,getTransactionData:l}=nt();async function s(a){a.preventDefault();try{o();const u={tipo:`${t.type?"entrada":"saida"}`,descricao:t.description,valor:F0(t.value),data:N0(t.date),categoria_id:t.category_id};await FE(t.id,u,r),await l(),e()}catch(u){console.log(u)}finally{o()}}return E(iS,{children:t&&E(A0,{tittle:"Editar registro",onClose:e,transactionObject:t,setTransactionObject:n,isLoading:i,handleSubmit:s})})}function dk({transactionId:e,onClose:t}){const{token:n,isLoading:r,setLoading:i,getTransactionData:o}=nt();async function l(s){s.preventDefault();try{i(),await LE(e,n),await o(),t()}catch(a){console.log(a)}finally{i()}}return W(oS,{children:[E("span",{children:"Apagar item?"}),W(lS,{children:[E(sx,{text:"Sim",bgColor:Ec,isLoading:r,onClick:l}),E(Km,{bgColor:Bm,onClick:t,children:"Não"})]})]})}const pk=F.header`
@@ -457,7 +454,7 @@ attempted value: ${l}
   height: 2.5rem;
   color: ${nn};
 
-  @media (min-width: 768px) {
+  @media (min-width: 967px) {
     margin-top: 1%;
   }
 `,hk=F.div`
@@ -483,7 +480,7 @@ attempted value: ${l}
 `,gk=F.img`
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 967px) {
     display: block;
   }
 
@@ -530,6 +527,7 @@ attempted value: ${l}
   position: relative;
   justify-content: space-evenly;
   align-items: center;
+  min-width: 4rem;
   height: 100%;
 `,qd=F.img`
   width: 100%;
@@ -545,7 +543,7 @@ attempted value: ${l}
   margin: 1.5rem 0;
   background-color: ${Xw};
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 967px) {
     width: 964px;
     margin: 1.5rem auto;
   }
@@ -582,9 +580,10 @@ attempted value: ${l}
   justify-content: center;
   gap: .8rem;
 `;function Mk({filters:e}){const{transactionsList:t}=nt(),[n,r]=_.useState("asc"),[i,o]=_.useState(1),[l,s]=_.useState(null),a=6;_.useEffect(()=>{o(1)},[e]);let u=t.sort((x,h)=>{const d=new Date(x.data),m=new Date(h.data);return n==="asc"?d-m:m-d});function f(){r(n==="asc"?"desc":"asc")}function p(x){s(x)}const c=bk(u,i,a);function v(x){o(x)}function y(x){return i===x}function g(){const x=[];for(let h=1;h<=c.totalPages;h++)x.push(E(uu,{textColor:y(h)?`${nn}`:"black",bgColor:y(h)?`${Lr}`:`${jr}`,onClick:()=>v(h),children:h},h));return x}return W(pg,{children:[E(_.Fragment,{children:W(Fk,{children:[E(Lk,{children:W(Nk,{children:[W(Oo,{width:"163px",title:"Clique para ordenar",className:n,onClick:f,children:["Data",E(Ak,{src:Yd,alt:n==="asc"?"Ordenar crescente":"Ordenar decrescente",className:n})]}),E(Oo,{width:"152px",children:"Dia da semana"}),E("th",{children:"Descrição"}),E(Oo,{width:"200px",children:"Categoria"}),E(Oo,{width:"150px",children:"Valor"}),E("th",{})]})}),E("tbody",{children:c.items.map(x=>E(Dk,{transaction:x,isOpen:l,onOpen:p},x.id))})]})},"table"),E(_.Fragment,{children:E($k,{children:g()})},"pagination")]})}function bk(e,t=1,n=10){const r=n*(t-1),i=Math.ceil(e.length/n),o=e.slice(r,n*t);return{previousPage:t-1?t-1:null,nextPage:i>t?t+1:null,total:e.length,totalPages:i,items:o}}const zk=F(rS.withComponent("aside"))`
-width: 236px;
-margin: 1.5rem 0;
-gap: 1rem;
+  width: 236px;
+  margin: 1.5rem 0;
+  gap: 1rem;
+  justify-self: center;
 `,jk=F.div`
   display: flex;
   flex-direction: column;

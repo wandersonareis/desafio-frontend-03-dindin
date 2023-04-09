@@ -1,13 +1,13 @@
-import InputStyled, { SelectStyled } from "./InputStyled";
+import InputStyled, { NumberInputStyled, SelectStyled } from "./InputStyled";
 
+const inputModels = {
+  input: InputStyled,
+  select: SelectStyled,
+  number: NumberInputStyled
+}
 function FormInput({ inputType, ...rest }) {
-  if (inputType === "select") {
-    return (
-      <SelectStyled {...rest} />
-    );
-  }
-
-  return <InputStyled {...rest} />;
+  const Component = inputModels[inputType] || InputStyled;
+  return <Component {...rest} />;
 }
 
 export function createInputs(inputModels) {

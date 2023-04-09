@@ -48,6 +48,7 @@ export const PrimaryButton = styled(Button)`
 export const AddRegisterButton = styled(Button)`
   align-self: flex-end;
   width: 236px;
+  background: linear-gradient(to right, hsla(200, 90%, 50%, 0.8) 0%, hsla(232, 95%, 63%, 0.8) 50%, hsla(242, 95%, 53%, 0.7) 100%);
 `;
 
 export const CreditsTransactionTypeButton = styled(Button)`

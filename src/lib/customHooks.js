@@ -24,7 +24,7 @@ export function useToggle(initialState = false) {
   const toggle = useCallback(() => setState((state) => !state), []);
 
   return [state, toggle];
-};
+}
 
 export function useOnClickOutside(ref, handler) {
   useEffect(() => {

@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import InputStyled, { NumberInputStyled, SelectStyled } from "../basics/Input/InputStyled";
 import { ModalCloseButton, ModalContainer, ModalContentForm, ModalTitle } from "../modal/modalStyled";
 import { successColor, warningColor } from "../colors";
 import { CreditsTransactionTypeButton, DebitsTransactionTypeButton, LoadingButton } from "../buttons";
@@ -8,6 +7,7 @@ import { onlyDate } from "../../util/localDateFormater";
 import { useOnClickOutside } from "../../lib/customHooks";
 import { useAuth } from "../../context";
 import { useLoaderData } from "react-router-dom";
+import { createInputs } from "../basics/Input/createInputs";
 
 export default function TransactionForm({ tittle, onClose, transactionObject, setTransactionObject, handleSubmit }) {
   const [selectedCategory, setSelectedCategory] = useState(1);
@@ -54,6 +54,43 @@ export default function TransactionForm({ tittle, onClose, transactionObject, se
     setTransactionObject({ ...transactionObject, [name]: value });
   }
 
+  const inputModels = [
+    {
+      inputType: "number",
+      name: "value",
+      label: "Valor",
+      type: "text",
+      value: transactionObject.value,
+      onChange: handleChangeNumberInput,
+    },
+    {
+      inputType: "select",
+      name: "category_id",
+      label: "Categoria",
+      options: categoriesList,
+      value: selectedCategory,
+      onChange: handleOptionChange
+    },
+    {
+      inputType: "input",
+      name: "date",
+      label: "Data",
+      type: "date",
+      value: onlyDate(transactionObject.date),
+      onChange: handleChangeInput
+    },
+    {
+      inputType: "input",
+      name: "description",
+      label: "Descrição",
+      type: "text",
+      value: transactionObject.description,
+      onChange: handleChangeInput
+    },
+  ];
+
+  const inputs = createInputs(inputModels);
+
   return (
     <ModalContentForm onSubmit={handleSubmit} ref={transactionFormRef}>
       <ModalContainer>
@@ -68,10 +105,7 @@ export default function TransactionForm({ tittle, onClose, transactionObject, se
           Saída
         </DebitsTransactionTypeButton>
       </ModalContainer>
-      <NumberInputStyled name="value" label="Valor" type="text" value={transactionObject.value} onChange={handleChangeNumberInput} />
-      <SelectStyled name="category_id" label="Categoria" type="select" options={categoriesList} value={selectedCategory} onChange={handleOptionChange} />
-      <InputStyled name="date" label="Data" type="date" value={onlyDate(transactionObject.date)} onChange={handleChangeInput} />
-      <InputStyled name="description" label="Descrição" type="text" value={transactionObject.description} onChange={handleChangeInput} />
+      {inputs}
       <LoadingButton type="submit" isLoading={isLoading} text="Confirma" />
     </ModalContentForm>
   );

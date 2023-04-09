@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { whitePureColor } from "../../components/colors";
 
 export const MainContainer = styled.div`
-  padding-top: 4rem;
   background: linear-gradient(90deg, rgb(5, 237, 227), rgb(100, 95, 251));
 `;
 export const MainContent = styled.main`

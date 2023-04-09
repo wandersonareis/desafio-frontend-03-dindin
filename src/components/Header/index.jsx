@@ -1,15 +1,25 @@
 import logoDinDin from "../../assets/logo.svg";
 import profileIco from "../../assets/profile-logo.svg";
 import logout from "../../assets/logout.svg";
-import { Link } from "react-router-dom";
 import { useAuth } from "../../context";
 import { UserPerfilEditModal } from "../modal";
 import { useToggle } from "../../lib/customHooks";
-import { DindinHeader, HeaderContainer, MainHeader, ProfileIcon } from "./headerStyled";
+import {
+  Bar,
+  DindinHeaderLogo,
+  Hamburger,
+  Header,
+  NavBar,
+  NavItem,
+  NavLink,
+  NavMenu,
+  ProfileIcon
+} from "./headerStyled.js";
 
-export default function Header() {
-  const { user, isLoggedIn, onLogout, setTransactionsList, setTransactionsSummary } = useAuth();
+export default function HeaderResponsive() {
+  const { user, onLogout, setTransactionsList, setTransactionsSummary } = useAuth();
   const [isUserProfileEditModalOpem, setUserProfileEditModalOpen] = useToggle();
+  const [active, setActive] = useToggle(false);
 
   const user_name = user?.name || "No name";
 
@@ -20,20 +30,32 @@ export default function Header() {
   }
 
   return (
-    <MainHeader>
-      <DindinHeader>
-        <img src={logoDinDin} alt="Logo Dindin" />
-      </DindinHeader>
-      {isLoggedIn && (
-        <HeaderContainer>
+    <Header>
+      <NavBar>
+        <DindinHeaderLogo>
+          <img src={logoDinDin} alt="Logo Dindin" />
+        </DindinHeaderLogo>
+        <NavMenu className={active ? "active" : ""}>
           <ProfileIcon onClick={setUserProfileEditModalOpen} src={profileIco} alt="Profile icon" />
-          <p onClick={setUserProfileEditModalOpen} >{user_name}</p>
-          <Link to="/" onClick={userLogout}>
-            <img src={logout} alt="logout" />
-          </Link>
-        </HeaderContainer>
-      )}
+          <NavItem>
+            <NavLink>
+              <p onClick={setUserProfileEditModalOpen}>{user_name}</p>
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/" onClick={userLogout}>
+              <img src={logout} alt="logout" />
+              <span>Sair</span>
+            </NavLink>
+          </NavItem>
+        </NavMenu>
+        <Hamburger onClick={setActive}>
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+        </Hamburger>
+      </NavBar>
       {isUserProfileEditModalOpem && <UserPerfilEditModal onClose={setUserProfileEditModalOpen} />}
-    </MainHeader>
+    </Header>
   );
 }

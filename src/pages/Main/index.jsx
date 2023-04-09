@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Card, MainCard, MainContainer, MainContent } from "./mainPageStyled";
 import { FilterButton } from "../../components/buttons";
-import Header from "../../components/Header";
 import FilterIcon from "../../assets/filter.svg";
 import FiltersCard from "../../components/FiltersCard";
 import TransactionsTable from "../../components/TransactionsTable";
 import TransactionsSummary from "../../components/TransactionsSummary";
 import { useAuth } from "../../context";
 import { useToggle } from "../../lib/customHooks";
+import HeaderResponsive from "../../components/Header";
 
 export default function Main() {
   const [filters, setFilters] = useState([]);
@@ -28,7 +28,7 @@ export default function Main() {
 
   return (
     <MainContainer>
-      <Header />
+      <HeaderResponsive />
       <MainContent>
         <FilterButton type="button" onClick={setFiltersModalOpen}>
           <img src={FilterIcon} alt="Filter icon" />

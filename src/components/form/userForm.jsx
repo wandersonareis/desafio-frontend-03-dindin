@@ -18,8 +18,6 @@ export default function UserForm({ handleSelect, name, email, password, confirmP
       label: "E-mail",
       placeholder: "Digite seu e-mail",
       type: "email",
-      pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$",
-      title: "Insira um endereço de email válido.",
       onSelect: handleSelect,
       autocomplete: "email",
       ...email,

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getUserTransactionsFiltered, getUserTransactionsList, getUserTransactionsSummary } from "../api";
+import { handleErrorss } from "../handleErros";
 
 export function transactionsContext(token) {
   const [transactionsList, setTransactionsList] = useState([]);
@@ -12,7 +13,7 @@ export function transactionsContext(token) {
       setTransactionsList(transactionListResponse);
       setTransactionsSummary({ credits, debits });
     } catch (error) {
-      console.log(error);
+      handleErrorss(error);
     }
   }
 

@@ -7,7 +7,7 @@ import { Logo } from "./loginFormStyled";
 import { primaryColor } from "../colors";
 import { schemaPasswordConfirmValidation } from "../../util/schemas";
 import { Container, SpanWarning } from "../styled";
-import { handleErrors } from "../../handleErros";
+import { handleErrorss } from "../../handleErros";
 import { ModalTitle } from "../modal/modalStyled";
 import { userSignUp } from "../../api";
 import { useFormInput } from "../../lib/customHooks";
@@ -57,7 +57,7 @@ export default function SignUpForm() {
       navigate("/");
       resetAllFileds();
     } catch (err) {
-      handleErrors(err, setSpanWarning, setWarning);
+      handleErrorss(err, setSpanWarning, setWarning);
     } finally {
       setLoading();
     }

@@ -7,16 +7,10 @@ import { primaryColor } from "../colors";
 import { SpanWarning } from "../styled";
 import { useAuth } from "../../context";
 import { useFormInput } from "../../lib/customHooks";
-import {
-  LoginContainer,
-  LoginFormContainer,
-  LoginLeftContainer,
-  Logo,
-  Paragraph,
-  TittleParagraph
-} from "./loginFormStyled";
+import { LoginContainer, LoginFormContainer, LoginLeftContainer, Logo, Paragraph, TittleParagraph } from "./loginFormStyled";
 import { createInputs } from "../basics/Input/createInputs";
 import logo from "../../assets/logo.svg";
+import { handleErrorss } from "../../handleErros";
 
 export default function SignInForm() {
   const { resetValue: resetEmail, ...email } = useFormInput("");
@@ -56,11 +50,7 @@ export default function SignInForm() {
       resetEmail();
       resetPassword();
     } catch (error) {
-      if (error.response?.data?.mensagem) {
-        setSpanWarning(error.response.data.mensagem);
-      } else {
-        console.log(error);
-      }
+      handleErrorss(error, setSpanWarning)
     } finally {
       setLoading();
     }
@@ -74,7 +64,7 @@ export default function SignInForm() {
       placeholder: "Digite seu email",
       type: "email",
       onSelect: handleSelect,
-      ...email
+      ...email,
     },
     {
       inputType: "input",
@@ -84,8 +74,8 @@ export default function SignInForm() {
       type: "password",
       onSelect: handleSelect,
       required: true,
-      ...password
-    }
+      ...password,
+    },
   ];
 
   const inputs = createInputs(inputModels);
@@ -98,8 +88,7 @@ export default function SignInForm() {
           Controle suas <strong>finanças</strong>,<br />
           sem planilha chata.
         </TittleParagraph>
-        <Paragraph>Organizar as suas finanças nunca foi tão fácil, com o DINDIN, você tem tudo num único lugar e em um
-          clique de distância.</Paragraph>
+        <Paragraph>Organizar as suas finanças nunca foi tão fácil, com o DINDIN, você tem tudo num único lugar e em um clique de distância.</Paragraph>
         <PrimaryButton width="449px" onClick={signUpClick}>
           Cadastre-se
         </PrimaryButton>

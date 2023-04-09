@@ -28,11 +28,13 @@ const InputElement = styled.input`
   height: 3.5rem;
   padding: 1rem;
   margin-bottom: 0.5rem;
+
+  position: relative;
 `;
 
 const Prefix = styled.span`
   position: absolute;
-  top: 67%;
+  top: 62%;
   left: 1.2rem;
   font-size: 1.2rem;
   transform: translateY(-50%);
@@ -43,31 +45,30 @@ const NumberInput = styled(InputElement)`
 `;
 const SelectElement = styled(InputElement.withComponent("select"))``;
 
-function InputStyled({ name, label, placeholder, type, value, onSelect, onChange, pattern, title }) {
+function InputStyled({ label, ...rest }) {
   return (
     <InputContainer>
       <InputLabel>{label}</InputLabel>
-      <InputElement name={name} type={type} placeholder={placeholder} value={value} onSelect={onSelect} onChange={onChange} pattern={pattern} title={title} />
+      <InputElement {...rest} />
     </InputContainer>
   );
 }
 
-export function NumberInputStyled({ name, label, placeholder, type, value, onSelect, onChange }) {
+export function NumberInputStyled({ label, ...rest }) {
   return (
     <InputContainer>
       <InputLabel>{label}</InputLabel>
-
-      <NumberInput name={name} type={type} placeholder={placeholder} value={value} onSelect={onSelect} onChange={onChange} />
+      <NumberInput {...rest} />
       <Prefix>R$</Prefix>
     </InputContainer>
   );
 }
 
-export function SelectStyled({ name, label, options, value, onSelect, onChange }) {
+export function SelectStyled({ label, options, ...rest }) {
   return (
     <InputContainer>
       <InputLabel>{label}</InputLabel>
-      <SelectElement name={name} value={value} onSelect={onSelect} onChange={onChange}>
+      <SelectElement {...rest}>
         {options.map((option) => (
           <option key={option.id} value={option.id}>
             {option.descricao}

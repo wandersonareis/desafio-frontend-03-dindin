@@ -8,12 +8,13 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [isLoading, setLoading] = useToggle();
 
-  const { token, user, isLoggedIn, handleLogin, handleLogout } = userContext();
+  const { token, user, setUserData, isLoggedIn, handleLogin, handleLogout } = userContext();
   const { transactionsList, setTransactionsList, transactionsSummary, setTransactionsSummary, getTransactionData } = transactionsContext(token);
 
   const value = {
     token,
     user,
+    setUserData,
     isLoggedIn,
     isLoading,
     setLoading,

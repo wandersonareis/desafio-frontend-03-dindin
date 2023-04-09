@@ -60,6 +60,7 @@ export function userContext() {
   return {
     token,
     user: userData,
+    setUserData,
     isLoggedIn,
     handleLogin,
     handleLogout

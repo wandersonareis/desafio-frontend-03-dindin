@@ -6,7 +6,7 @@ export const Logo = styled.img`
   top: 2%;
   left: 2%;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     top: 4rem;
     left: 7%;
   }
@@ -17,13 +17,12 @@ export const LoginContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
   grid-gap: 1rem;
-  //height: 100%;
   align-items: center;
   justify-items: end;
   justify-content: center;
   margin-top: 4%;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     justify-content: end;
   }
 `;
@@ -37,7 +36,7 @@ export const LoginFormContainer = styled.form`
   padding: 40px 24px;
   min-height: 350px;
   width: 400px;
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     max-width: max-content;
     min-height: 420px;
   }
@@ -69,7 +68,7 @@ export const Paragraph = styled.p`
     color: ${highlightColor};
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     max-width: 33rem;
   }
 `;

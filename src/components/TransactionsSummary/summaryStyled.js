@@ -3,9 +3,10 @@ import { boxShadowColor, cardBgColor, orangeColor, primaryColor, successColor } 
 import { MainContainer } from "../styled";
 
 export const SummaryContainer = styled(MainContainer.withComponent("aside"))`
-width: 236px;
-margin: 1.5rem 0;
-gap: 1rem;
+  width: 236px;
+  margin: 1.5rem 0;
+  gap: 1rem;
+  justify-self: center;
 `;
 export const SummaryCard = styled.div`
   display: flex;

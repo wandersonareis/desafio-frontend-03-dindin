@@ -25,6 +25,7 @@ export const TableCellActions = styled(TableCell)`
   position: relative;
   justify-content: space-evenly;
   align-items: center;
+  min-width: 4rem;
   height: 100%;
 `;
 

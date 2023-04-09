@@ -15,7 +15,7 @@ export const MainHeader = styled.header`
   height: 2.5rem;
   color: ${whitePureColor};
 
-  @media (min-width: 768px) {
+  @media (min-width: 967px) {
     margin-top: 1%;
   }
 `;
@@ -45,7 +45,7 @@ export const HeaderContainer = styled.div`
 export const ProfileIcon = styled.img`
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 967px) {
     display: block;
   }
 

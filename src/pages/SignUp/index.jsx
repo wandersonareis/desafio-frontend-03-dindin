@@ -25,7 +25,7 @@ const SignUpPageContainer = styled.main`
   padding: 3% 2%;
   position: relative;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 967px) {
     justify-content: space-around;
     padding: 0 7%;
   }

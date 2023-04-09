@@ -9,7 +9,7 @@ export const Table = styled.table`
   margin: 1.5rem 0;
   background-color: ${tableBgColor};
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 967px) {
     width: 964px;
     margin: 1.5rem auto;
   }

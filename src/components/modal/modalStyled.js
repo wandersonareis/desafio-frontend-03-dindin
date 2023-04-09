@@ -14,7 +14,7 @@ export const ModalBackdrop = styled.div`
   background-color: ${backDropColor};
   z-index: 2;
 
-  @media (min-width: 767px) {
+  @media (min-width: 967px) {
     align-items: center;
   }
 `;
@@ -67,17 +67,17 @@ export const ModalContentForm = styled.form`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-height: 700px;
   background-color: ${whitePureColor};
   border-radius: 20px;
   box-shadow: 0 0 10px ${boxShadowColor};
-  padding: 2%;
+  padding: 4%;
+  margin: 2%;
+  gap: 1rem;
 
-  @media (min-width: 767px) {
+  @media (min-width: 967px) {
     justify-content: space-around;
     width: auto;
-    height: 100%;
-    gap: 0.5rem;
+    max-height: 770px;
   }
 `;
 

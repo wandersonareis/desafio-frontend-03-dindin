@@ -19,7 +19,6 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 1.5rem;
 
   @media (max-width: 767px) {
     overflow-x: auto;
@@ -31,10 +30,9 @@ export const MainCard = styled.div`
   --auto-grid-min-size: 20rem;
   display: grid;
   grid-template-columns: 1fr;
-  justify-self: center;
   grid-gap: 1rem;
 
-  @media (min-width: 996px) {
+  @media (min-width: 967px) {
     grid-template-columns: auto minmax(var(--auto-grid-min-size), 1fr);
   }
 `;

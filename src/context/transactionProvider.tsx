@@ -1,10 +1,14 @@
-import { useState } from "react";
+import React, { useState, createContext } from "react";
 import { getUserTransactionsFiltered, getUserTransactionsList, getUserTransactionsSummary } from "../api";
 import { handleErrorss } from "../handleErros";
+import { getObjectItem } from "../util/storage";
 
-export function transactionsContext(token) {
+const TransactionContext = createContext({});
+
+export const TransactionProvider = ({ children }) => {
   const [transactionsList, setTransactionsList] = useState([]);
   const [transactionsSummary, setTransactionsSummary] = useState({});
+  const { token } = getObjectItem();
 
   async function getTransactionData(filters = []) {
     try {
@@ -17,11 +21,15 @@ export function transactionsContext(token) {
     }
   }
 
-  return {
+  const value = {
     transactionsList,
     setTransactionsList,
     transactionsSummary,
     setTransactionsSummary,
     getTransactionData,
   };
-}
+
+  return <TransactionContext.Provider value={value}>{children}</TransactionContext.Provider>;
+};
+
+export default TransactionContext;

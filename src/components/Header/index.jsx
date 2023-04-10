@@ -1,7 +1,7 @@
 import logoDinDin from "../../assets/logo.svg";
 import profileIco from "../../assets/profile-logo.svg";
 import logout from "../../assets/logout.svg";
-import { useAuth } from "../../context";
+import { useAuth, useTransaction } from "../../context";
 import { UserPerfilEditModal } from "../modal";
 import { useToggle } from "../../lib/customHooks";
 import {
@@ -17,7 +17,8 @@ import {
 } from "./headerStyled.js";
 
 export default function HeaderResponsive() {
-  const { user, onLogout, setTransactionsList, setTransactionsSummary } = useAuth();
+  const { user, onLogout } = useAuth();
+  const { setTransactionsList, setTransactionsSummary } = useTransaction();
   const [isUserProfileEditModalOpem, setUserProfileEditModalOpen] = useToggle();
   const [active, setActive] = useToggle(false);
 

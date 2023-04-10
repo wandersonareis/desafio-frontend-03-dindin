@@ -4,10 +4,10 @@ import SortIconSvg from "../../assets/ico-asc.svg";
 import { PaginadeTableContainer, SortIcon, Table, TableHeader, Th, Tr } from "./tableStyles";
 import { FiltersActionApplyButton } from "../buttons";
 import { primaryColor, whitePureColor, whiteSnowColor } from "../colors";
-import { useAuth } from "../../context";
+import { useTransaction } from "../../context";
 
 function TransactionsTable({ filters }) {
-  const { transactionsList } = useAuth();
+  const { transactionsList } = useTransaction();
   const [sortDirection, setSortDirection] = useState("asc");
   const [currentPage, setCurrentPage] = useState(1);
   const [isAnyWarningModalOpen, setAnyWarningModalOpen] = useState(null);

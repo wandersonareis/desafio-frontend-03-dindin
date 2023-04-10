@@ -5,7 +5,7 @@ import FilterIcon from "../../assets/filter.svg";
 import FiltersCard from "../../components/FiltersCard";
 import TransactionsTable from "../../components/TransactionsTable";
 import TransactionsSummary from "../../components/TransactionsSummary";
-import { useAuth } from "../../context";
+import { TransactionProvider, useTransaction } from "../../context";
 import { useToggle } from "../../lib/customHooks";
 import HeaderResponsive from "../../components/Header";
 
@@ -14,7 +14,7 @@ export default function Main() {
   const [filtersList, setFiltersList] = useState([]);
   const [filtersModalOpen, setFiltersModalOpen] = useToggle();
 
-  const { getTransactionData, setTransactionsList, setTransactionsSummary } = useAuth();
+  const { getTransactionData, setTransactionsList, setTransactionsSummary } = useTransaction();
 
   useEffect(() => {
     setTransactionsList([]);
@@ -34,13 +34,13 @@ export default function Main() {
           <img src={FilterIcon} alt="Filter icon" />
           <span>Filtrar</span>
         </FilterButton>
-        <MainCard>
-          <Card>
-            {filtersModalOpen && <FiltersCard selectedFilter={selectedFilter} filtersList={filtersList} setFilters={setFilters} setFiltersList={setFiltersList} />}
-            <TransactionsTable filters={filters} />
-          </Card>
-          <TransactionsSummary />
-        </MainCard>
+          <MainCard>
+            <Card>
+              {filtersModalOpen && <FiltersCard selectedFilter={selectedFilter} filtersList={filtersList} setFilters={setFilters} setFiltersList={setFiltersList} />}
+              <TransactionsTable filters={filters} />
+            </Card>
+            <TransactionsSummary />
+          </MainCard>
       </MainContent>
     </MainContainer>
   );

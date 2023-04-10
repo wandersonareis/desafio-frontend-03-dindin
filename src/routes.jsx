@@ -2,7 +2,7 @@ import { Route } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Main from "./pages/Main";
-import { ProtectedRoute } from "./context";
+import { ProtectedRoute, TransactionProvider } from "./context";
 import { createRoutesFromElements } from "react-router-dom";
 import { AuthLayout } from "./context/authLayout";
 import { categoriesList } from "./services/getCategoriesList";
@@ -18,7 +18,9 @@ export const router = createHashRouter(
         loader={categoriesList}
         element={
           <ProtectedRoute>
-            <Main />
+            <TransactionProvider>
+              <Main />
+            </TransactionProvider>
           </ProtectedRoute>
         }
       />

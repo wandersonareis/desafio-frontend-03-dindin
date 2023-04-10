@@ -4,10 +4,11 @@ import { sendUserTransactionUpdate } from "../../api";
 import { TransactionForm } from "../form";
 import { toIsodateString } from "../../util/localDateFormater";
 import { formatToCents } from "../../util/localCurrencyConverter";
-import { useAuth } from "../../context";
+import { useAuth, useTransaction } from "../../context";
 
 export default function EditTransactionEntryModal({ onClose, transactionToUpdate, setTransactionToUpdate }) {
-  const { token, isLoading, setLoading, getTransactionData } = useAuth();
+  const { token, isLoading, setLoading } = useAuth();
+  const { getTransactionData } = useTransaction();
 
   async function handleSubmit(e) {
     e.preventDefault();

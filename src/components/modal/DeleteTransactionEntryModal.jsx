@@ -2,10 +2,11 @@ import { SmallLoadingButton, WarningDeleteButton } from "../buttons";
 import { successColor, warningColor } from "../colors";
 import { ModalDeleteContainer, ModalDeleteContent } from "./modalStyled";
 import { deleteUserTransaction } from "../../api";
-import { useAuth } from "../../context";
+import { useAuth, useTransaction } from "../../context";
 
 export default function DeleteTransactionEntryModal({ transactionId, onClose }) {
-  const { token, isLoading, setLoading, getTransactionData } = useAuth();
+  const { token, isLoading, setLoading } = useAuth();
+  const { getTransactionData } = useTransaction();
 
   async function handleDeleteClick(e) {
     e.preventDefault();

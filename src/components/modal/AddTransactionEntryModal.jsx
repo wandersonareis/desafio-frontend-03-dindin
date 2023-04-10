@@ -4,7 +4,7 @@ import { createUserTransaction } from "../../api";
 import { TransactionForm } from "../form";
 import { toIsodateString } from "../../util/localDateFormater";
 import { formatMoney, formatToCents } from "../../util/localCurrencyConverter";
-import { useAuth } from "../../context";
+import { useAuth, useTransaction } from "../../context";
 
 const transactionBase = {
   type: false,
@@ -16,7 +16,8 @@ const transactionBase = {
 
 export default function AddTransactionEntryModal({ isOpen, onClose }) {
   const [transaction, setTransaction] = useState(transactionBase);
-  const { token, setLoading, getTransactionData } = useAuth();
+  const { token, setLoading } = useAuth();
+  const { getTransactionData } = useTransaction();
 
   async function handleSubmit(e) {
     e.preventDefault();

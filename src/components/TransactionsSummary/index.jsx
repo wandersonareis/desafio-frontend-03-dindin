@@ -11,10 +11,10 @@ import {
   SummarySpanDeposits,
   SummarySpanWithDraws,
 } from "./summaryStyled";
-import { useAuth } from "../../context";
+import { useTransaction } from "../../context";
 
 export default function TransactionsSummary() {
-  const { transactionsSummary } = useAuth();
+  const { transactionsSummary } = useTransaction();
   const [isAddTransactionModalOpen, setIsAddTransactionModalOpen] = useState(false);
   const [credits, setCredits] = useState(0);
   const [debits, setDebits] = useState(0);
